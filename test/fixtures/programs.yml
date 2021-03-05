@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  paid: false
+  work_auth: false
+  class_standing: 1
+  company: 1
+
+two:
+  name: MyString
+  type: 
+  paid: false
+  work_auth: false
+  class_standing: 1
+  company: 1
