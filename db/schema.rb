@@ -17,27 +17,50 @@ ActiveRecord::Schema.define(version: 2021_03_05_232546) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "field"
     t.string "stage"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "courses", id: false, force: :cascade do |t|
+    t.boolean "independent_study"
+    t.string "coursename"
+    t.string "coursecode"
+    t.string "coursedescription"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "instructors", id: false, force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "email_address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "programs", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "field"
     t.boolean "paid"
     t.boolean "work_auth"
     t.integer "class_standing"
-    t.integer "company"
+    t.string "company"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "user"
-    t.text "text"
+    t.string "user"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "subjects", id: false, force: :cascade do |t|
+    t.string "subject_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,7 +71,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_232546) do
     t.integer "class_year"
     t.text "bio"
     t.string "title"
-    t.integer "affiliation"
+    t.string "affiliation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
