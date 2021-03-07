@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_232546) do
+ActiveRecord::Schema.define(version: 2021_03_07_231408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,23 +20,6 @@ ActiveRecord::Schema.define(version: 2021_03_05_232546) do
     t.string "field"
     t.string "stage"
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "courses", id: false, force: :cascade do |t|
-    t.boolean "independent_study"
-    t.string "coursename"
-    t.string "coursecode"
-    t.string "coursedescription"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "instructors", id: false, force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.string "email_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,14 +36,8 @@ ActiveRecord::Schema.define(version: 2021_03_05_232546) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "user"
+    t.integer "user"
     t.text "comment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "subjects", id: false, force: :cascade do |t|
-    t.string "subject_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
