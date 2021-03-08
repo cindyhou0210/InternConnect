@@ -16,9 +16,9 @@ end
 end
 
 5.times do
-    Program.create(name: Faker::Job.title, field: Faker::Company.industry, paid: Faker::Boolean.boolean, work_auth: Faker::Boolean.boolean, class_standing: Faker::Number.between(from: 1, to: 4), company: Company.all.sample.name)
+    Program.create(name: Faker::Job.title, field: Faker::Company.industry, paid: Faker::Boolean.boolean, work_auth: Faker::Boolean.boolean, class_standing: Faker::Number.between(from: 1, to: 4), company_id: Company.all.sample.id)
 end
 
 5.times do
-    Review.create(user: User.all.sample.name, comment: Faker::TvShows::RickAndMorty.quote)
+    Review.create(user_id: User.all.sample.id, comment: Faker::TvShows::RickAndMorty.quote)
 end

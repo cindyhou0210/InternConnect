@@ -1,4 +1,4 @@
-class ChangeAffiliationToStringInUsers < ActiveRecord::Migration[6.1]
+class ChangeAffiliationToString < ActiveRecord::Migration[6.1]
   def up
     change_column :users, :affiliation, :string
   end
