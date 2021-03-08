@@ -7,6 +7,7 @@
     <thead>
       <tr>
         <th>User</th>
+        <th>Program</th>
         <th>Comment</th>
         <th colspan="2"></th>
       </tr>
@@ -15,7 +16,8 @@
     <tbody>
       <% @reviews.each do |review| %>
         <tr>
-          <td><%= review.user %></td>
+          <td><%= review.user.name %></td>
+          <td><%= review.program.name %></td>
           <td><%= review.comment %></td>
           <td><%= link_to 'Show', review %></td>
           <td><%= link_to 'Edit', '#' %></td>

@@ -20,5 +20,5 @@ end
 end
 
 5.times do
-    Review.create(user_id: User.all.sample.id, comment: Faker::TvShows::RickAndMorty.quote)
+    Review.create(user_id: User.all.sample.id, program_id: Program.all.sample.id, comment: Faker::TvShows::RickAndMorty.quote)
 end
