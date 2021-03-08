@@ -4,6 +4,6 @@ class ChangeTypeToFieldInCompanies < ActiveRecord::Migration[6.1]
   end
 
   def down
-    change_column :companies, :field, :type
+    rename_column :companies, :field, :type
   end
 end
