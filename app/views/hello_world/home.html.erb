@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+  <%= link_to image_tag("Group_8.png", alt: "InternConnect"), '#' %>
+</div>
 
-<div class = "table">
-  <h1>Reviews</h1>
+<div class = "center table">
+  <h1>Program Reviews</h1>
 
   <table>
     <thead>
       <tr>
         <th>User</th>
         <th>Program</th>
+        <th>Company</th>
         <th>Comment</th>
-        <th colspan="2"></th>
       </tr>
     </thead>
 
@@ -18,13 +20,16 @@
         <tr>
           <td><%= review.user.name %></td>
           <td><%= review.program.name %></td>
+          <td><%= review.program.company.name %></td>
           <td><%= review.comment %></td>
-          <td><%= link_to 'Show', review %></td>
-          <td><%= link_to 'Edit', '#' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
+  <%= link_to "Add Your Review", '#', class: "btn btn-lg btn-primary" %>
+
 </div>
+
+
 
