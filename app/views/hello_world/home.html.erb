@@ -2,34 +2,36 @@
   <%= link_to image_tag("Group_8.png", alt: "InternConnect"), '#' %>
 </div>
 
-<div class = "center table">
-  <h1>Program Reviews</h1>
+  <div class = "center table">
+    <h1>Program Reviews</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Program</th>
-        <th>Company</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @reviews.each do |review| %>
+    <table>
+      <thead>
         <tr>
-          <td><%= review.user.name %></td>
-          <td><%= review.program.name %></td>
-          <td><%= review.program.company.name %></td>
-          <td><%= review.comment %></td>
+          <th>User</th>
+          <th>Program</th>
+          <th>Company</th>
+          <th>Comment</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <%= link_to "Add Your Review", '#', class: "btn btn-lg btn-primary" %>
+      <tbody>
+        <% @reviews.each do |review| %>
+          <tr>
+            <td><%= review.user.name %></td>
+            <td><%= review.program.name %></td>
+            <td><%= review.program.company.name %></td>
+            <td><%= review.comment %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-</div>
+    <div class="text-center">
+      <%= link_to "Add Your Review", '#', class: "btn btn-lg btn-primary" %>
+    </div>
+  </div>
+
 
 
 
