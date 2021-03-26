@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'items#home'
   get '/signup', to: 'user_confids#new'
+  get '/add-review', to: 'reviews#new'
+  get '/hello-world', to: 'hello_world#home'
   resources :user_confids
 end

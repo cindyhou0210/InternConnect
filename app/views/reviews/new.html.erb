@@ -19,11 +19,6 @@
       <%= form.text_area :comment, size: "70x5" %>
     </div>
 
-    <div class="pb-3">
-      <%= form.label :collaboration, "How would you rate the level of collaboration?" %>
-      <%= form.collection_radio_buttons :collaboration, ["1, 2, 3, 4, 5"], 1..5 %>
-    </div>
-
     <%= form.submit "Submit Review" %>
   <% end %>
 </div>
