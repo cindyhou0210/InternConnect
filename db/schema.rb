@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2021_03_26_171116) do
     t.boolean "unpaid"
     t.integer "leadership"
     t.integer "multitasking"
-<<<<<<< HEAD
   end
 
   create_table "user_confids", force: :cascade do |t|
@@ -63,8 +62,6 @@ ActiveRecord::Schema.define(version: 2021_03_26_171116) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-=======
->>>>>>> update-reviews
   end
 
   create_table "users", force: :cascade do |t|
