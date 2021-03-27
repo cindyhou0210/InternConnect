@@ -21,49 +21,69 @@
     <%= form.text_area :comment, size: "70x5" %>
   </div>
 
-  <% one_to_five = [1, 2, 3, 4, 5] %>
-  <% t_or_f = [true, false] %>
 
   <div class="pb-3">
-    <%= form.label :collaboration, "On a scale of 1 to 5, how would you rate the level of collaboration?" %>
-    <div>
-      <%= form.collection_radio_buttons :collaboration, one_to_five, :to_s, :itself %>
-    </div>
+    <p>On a scale of 1 to 5, how would you rate the level of collaboration?</p>
+    <%= form.label :collab_1, "1" %>
+    <%= form.radio_button :collaboration, 1 %>
+    <%= form.label :collab_2, "2" %>
+    <%= form.radio_button :collaboration, 2 %>
+    <%= form.label :collab_3, "3" %>
+    <%= form.radio_button :collaboration, 3 %>
+    <%= form.label :collab_4, "4" %>
+    <%= form.radio_button :collaboration, 4 %>
+    <%= form.label :collab_5, "5" %>
+    <%= form.radio_button :collaboration, 5 %>
   </div>
 
   <div class="pb-3">
-    <%= form.label :independence, "On a scale of 1 to 5, how would you rate the amount of independence necessary for the position?" %>
-    <div>
-      <%= form.collection_radio_buttons :independence, one_to_five, :to_s, :itself%>
-    </div>
+    <p>On a scale of 1 to 5, how would you rate the amount of independence necessary for the position?</p>
+    <%= form.label :indep_1, "1" %>
+    <%= form.radio_button :independence, 1 %>
+    <%= form.label :indep_2, "2" %>
+    <%= form.radio_button :independence, 2 %>
+    <%= form.label :indep_3, "3" %>
+    <%= form.radio_button :independence, 3 %>
+    <%= form.label :indep_4, "4" %>
+    <%= form.radio_button :independence, 4 %>
+    <%= form.label :indep_5, "5" %>
+    <%= form.radio_button :independence, 5 %>
   </div>
 
   <div class="pb-3">
-    <%= form.label :unpaid, "This was an unpaid position." %>
-    <div>
-      <%= form.collection_radio_buttons :unpaid, t_or_f, :to_s, :itself %>
-    </div>
+    <p>This was an unpaid position.</p>
+    <%= form.label :unpaid_true, "True" %>
+    <%= form.radio_button :unpaid, true %>
+    <%= form.label :unpaid_false, "False" %>
+    <%= form.radio_button :unpaid, false %>
   </div>
 
   <div class="pb-3">
-    <%= form.label :leadership, "On a scale of 1 to 5, how would you rate the leadership skills necessary for the position?" %>
-    <div>
-      <%= form.collection_radio_buttons :leadership, one_to_five, :to_s, :itself%>
-    </div>
+    <p>On a scale of 1 to 5, how would you rate the leadership skills necessary for the position?</p>
+    <%= form.label :lead_1, "1" %>
+    <%= form.radio_button :leadership, 1 %>
+    <%= form.label :lead_2, "2" %>
+    <%= form.radio_button :leadership, 2 %>
+    <%= form.label :lead_3, "3" %>
+    <%= form.radio_button :leadership, 3 %>
+    <%= form.label :lead_4, "4" %>
+    <%= form.radio_button :leadership, 4 %>
+    <%= form.label :lead_5, "5" %>
+    <%= form.radio_button :leadership, 5 %>
   </div>
 
   <div class="pb-3">
-    <%= form.label :independence, "On a scale of 1 to 5, how would you rate the amount of independence necessary for the position?" %>
-    <div>
-      <%= form.collection_radio_buttons :independence, one_to_five, :to_s, :itself%>
-    </div>
-  </div>
-
-  <div class="pb-3">
-    <%= form.label :multitasking, "On a scale of 1 to 5, how would you rate the amount of multitasking necessary for the position?" %>
-    <div>
-      <%= form.collection_radio_buttons :multitasking, one_to_five, :to_s, :itself%>
-    </div>
+    <p>On a scale of 1 to 5, how would you rate the amount of multitasking necessary for the position?</p>
+    <%= form.label :multi_1, "1" %>
+    <%= form.radio_button :multitasking, 1 %>
+    <%= form.label :multi_2, "2" %>
+    <%= form.radio_button :multitasking, 2 %>
+    <%= form.label :multi_3, "3" %>
+    <%= form.radio_button :multitasking, 3 %>
+    <%= form.label :multi_4, "4" %>
+    <%= form.radio_button :multitasking, 4 %>
+    <%= form.label :multi_5, "5" %>
+    <%= form.radio_button :multitasking, 5 %>
   </div>
 
   <%= form.submit "Submit Review" %>
