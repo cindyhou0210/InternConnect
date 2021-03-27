@@ -11,8 +11,12 @@ class UserConfidsController < ApplicationController
       def create
         @user = UserConfid.new(user_params)
         if @user.save
-          flash[:success] = "Welcome to the app!"
-          redirect_to @user
+          @user_acc = User.new(name: user_params[:name], major: nil, class_year: nil, bio: nil, title: nil, 
+            userconf_id: UserConfid.where(:email => user_params[:email]).first.id)
+          if @user_acc.save
+            flash[:success] = "Welcome to the app!"
+            redirect_to @user
+          end
         else
           render 'new'
         end

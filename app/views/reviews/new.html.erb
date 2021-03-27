@@ -1,24 +1,70 @@
-<div class="text-center">
+<h1 class="mb-4 mt-2 text-center">Add Your Review</h1>
 
-  <h1 class="mb-4 mt-2">Add Your Review</h1>
+<%= form_with url: add_review_path, method: :post, local: true do |form| %>
 
-  <%= form_with url: "/add-review", method: :get, local: true do |form| %>
+  <div class="pb-3">
+    <%= form.hidden_field :user_id, value: User.where(:userconf_id => current_user.id).first.id %>
+  </div>
 
-    <div class="pb-3">
-      <%= form.label :program, "Program name:" %>
-      <%= form.text_field :program %>
-    </div>
-
-    <div class="pb-3">
-      <%= form.label :company, "Company name:" %>
-      <%= form.text_field :company %>
-    </div>
-
-    <div class="pb-3">
-      <%= form.label :comment, "Review:" %>
-      <%= form.text_area :comment, size: "70x5" %>
-    </div>
-
-    <%= form.submit "Submit Review" %>
+  <% prog_ids = Array.new %>
+  <% Program.all.each do |entry| %>
+    <% prog_ids.push ["#{entry.name}, #{entry.company.name}" , entry.id] %>
   <% end %>
-</div>
+
+  <div class="pb-3">
+    <%= form.label :program_id, "Internship:" %>
+    <%= form.select :program_id, prog_ids.sort %>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :comment, "Review:" %>
+    <%= form.text_area :comment, size: "70x5" %>
+  </div>
+
+  <% one_to_five = [1, 2, 3, 4, 5] %>
+  <% t_or_f = [true, false] %>
+
+  <div class="pb-3">
+    <%= form.label :collaboration, "On a scale of 1 to 5, how would you rate the level of collaboration?" %>
+    <div>
+      <%= form.collection_radio_buttons :collaboration, one_to_five, :to_s, :itself %>
+    </div>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :independence, "On a scale of 1 to 5, how would you rate the amount of independence necessary for the position?" %>
+    <div>
+      <%= form.collection_radio_buttons :independence, one_to_five, :to_s, :itself%>
+    </div>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :unpaid, "This was an unpaid position." %>
+    <div>
+      <%= form.collection_radio_buttons :unpaid, t_or_f, :to_s, :itself %>
+    </div>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :leadership, "On a scale of 1 to 5, how would you rate the leadership skills necessary for the position?" %>
+    <div>
+      <%= form.collection_radio_buttons :leadership, one_to_five, :to_s, :itself%>
+    </div>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :independence, "On a scale of 1 to 5, how would you rate the amount of independence necessary for the position?" %>
+    <div>
+      <%= form.collection_radio_buttons :independence, one_to_five, :to_s, :itself%>
+    </div>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :multitasking, "On a scale of 1 to 5, how would you rate the amount of multitasking necessary for the position?" %>
+    <div>
+      <%= form.collection_radio_buttons :multitasking, one_to_five, :to_s, :itself%>
+    </div>
+  </div>
+
+  <%= form.submit "Submit Review" %>
+<% end %>

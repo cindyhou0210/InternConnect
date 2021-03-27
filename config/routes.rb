@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'items#home'
   get '/signup', to: 'user_confids#new'
   get '/add-review', to: 'reviews#new'
+  post '/add-review', to: 'reviews#create'
   get '/hello-world', to: 'hello_world#home'
   resources :user_confids
 end
