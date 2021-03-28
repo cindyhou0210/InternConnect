@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
     def new
     end
+
+    
   
     def create
       user = UserConfid.find_by(email: params[:session][:email].downcase)

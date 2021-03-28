@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :programs
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'items#home'
+  root 'hello_world#landing'
   get '/signup', to: 'user_confids#new'
   get '/add-review', to: 'reviews#new'
   post '/add-review', to: 'reviews#create'
