@@ -6,12 +6,20 @@
         <div class="welcome">
         <%= link_to image_tag("Group_8.png", alt: "InternConnect"), '#' %>
         <h2 class="text-center">Select a quiz to optimize your experience</h2>
+        <div class = "text-center">
+             <%= link_to "Take a quiz", quiz_path, class: "mt-5 mb-2 btn btn-outline-danger" %>
+        </div>
+
+        <div class = "text-center">
+            <%= link_to "Sign up", signup_path, class: "btn btn-outline-warning" %>
+            <%= link_to "Reviews", hello_world_path, class: "btn btn-outline-primary" %>
+        </div>
+       
         </div>
         <br/>
         <!--<p>
             Please signup or login to test the app.
         <p>-->
-        <%= link_to "Sign up", signup_path, class: "btn btn-outline-dark" %>
-        <%= link_to "Reviews", hello_world_path, class: "btn btn-outline-dark" %>
+       
     </div>
 </div>

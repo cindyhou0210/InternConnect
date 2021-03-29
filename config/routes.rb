@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'hello_world#landing'
+  get '/landing', to: 'hello_world#landing'
+
+  get '/quiz', to: 'quiz#question1'
+  post '/quiz', to: 'quiz#create'
   get '/signup', to: 'user_confids#new'
   get '/add-review', to: 'reviews#new'
   post '/add-review', to: 'reviews#create'

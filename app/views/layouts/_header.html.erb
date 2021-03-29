@@ -14,7 +14,13 @@
   </style>
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Home", hello_world_path, class: "btn btn-outline-dark" %> <!--currently only direct back to review page. needs a home page-->
+      <% if logged_in? %>
+        
+        <%= link_to "Home", hello_world_path, class: "btn btn-outline-dark" %>
+      <% else %>
+        <%= link_to "Home", landing_path, class: "btn btn-outline-dark" %>
+      <% end %>
+      <!--currently only direct back to review page. needs a home page-->
     </div>
     <% if logged_in? %>
       <ul class="nav navbar-right ">
