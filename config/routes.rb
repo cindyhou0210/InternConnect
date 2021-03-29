@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   get '/hello-world', to: 'hello_world#home'
   get    '/add-program',   to: 'programs#new'
   post '/add-program', to: 'programs#create'
+  get    '/add-company',   to: 'companies#new'
+  post '/add-company', to: 'companies#create'
   resources :user_confids
 end
