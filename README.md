@@ -1,24 +1,10 @@
 # README
+InternConenect is platform to discover internships and connect with others who have completed internships at an array of different companies. 
+Users are prompted to take a quiz about their personality and skills for our algorithm to match them up with the perfect internship.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.7.2
 
-* System dependencies
+* Gems: Cancan, kaminari
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
