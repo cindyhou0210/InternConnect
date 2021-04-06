@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #get 'hello_world/home'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

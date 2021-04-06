@@ -9,6 +9,8 @@ gem 'rails', '6.1.1'
 gem 'pg', '~> 1.1'
 gem 'faker'
 gem 'bcrypt'
+#RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data.
+gem 'rails_admin', '~> 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
