@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_163257) do
+ActiveRecord::Schema.define(version: 2021_04_06_203838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,21 @@ ActiveRecord::Schema.define(version: 2021_03_27_163257) do
     t.integer "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "season"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "unpaid"
+    t.string "job_preference"
+    t.boolean "work_auth"
+    t.integer "collaboration"
+    t.integer "independence"
+    t.integer "leadership"
+    t.integer "multitasking"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "class_standing"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -51,9 +66,9 @@ ActiveRecord::Schema.define(version: 2021_03_27_163257) do
     t.integer "program_id"
     t.integer "collaboration"
     t.integer "independence"
-    t.boolean "unpaid"
     t.integer "leadership"
     t.integer "multitasking"
+    t.integer "compensation"
   end
 
   create_table "user_confids", force: :cascade do |t|
