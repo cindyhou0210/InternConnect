@@ -1,0 +1,61 @@
+<%= form_with model: @program, local: true do |form| %>
+  <%= render 'shared/error_messages', mod: @program %>
+
+  <% comp_ids = Array.new %>
+  <% Company.all.each do |entry| %>
+    <% comp_ids.push ["#{entry.name}" , entry.id] %>
+  <% end %>
+
+  <div class="pb-3">
+    <%= form.label :company_id, "Company:" %>
+    <%= form.select :company_id, comp_ids.sort %>
+    <%= link_to "Don't see your company?", new_company_path, class: "btn btn-outline-dark" %>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :name, "Program name:" %>
+    <%= form.text_field :name%>
+  </div>
+
+  <div class="pb-3">
+    <%= form.label :field, "Field:" %>
+    <%= form.text_field :field%>
+  </div>
+
+  <div class="pb-3">
+    <p>This program is paid.</p>
+    <%= form.label :paid_true, "True" %>
+    <%= form.radio_button :paid, true %>
+    <%= form.label :paid, "False" %>
+    <%= form.radio_button :paid, false %>
+  </div>
+
+  <div class="pb-3">
+    <p>What season did this program take place?</p>
+    <%= form.label :season %>
+    <%= form.text_field :season%>
+  </div>
+
+
+  <div class="pb-3">
+    <p>This program requires work authorization.</p>
+    <%= form.label :work_auth_true, "True" %>
+    <%= form.radio_button :work_auth, true %>
+    <%= form.label :work_auth_false, "False" %>
+    <%= form.radio_button :work_auth, false %>
+  </div>
+
+   <div class="pb-3">
+    <p>The minimum class standing requirement for this position is </p>
+    <%= form.label :class_stand_2, "Rising Sophomore" %>
+    <%= form.radio_button :class_standing, 2 %>
+    <%= form.label :class_stand_3, "Rising Junior" %>
+    <%= form.radio_button :class_standing, 2 %>
+    <%= form.label :class_stand_4, "Rising Senior" %>
+    <%= form.radio_button :class_standing, 3 %>
+    <%= form.label :class_stand_1, "No restriction" %>
+    <%= form.radio_button :class_standing, 1 %>
+  </div>
+
+  <%= form.submit "Add Program" %>
+<% end %>

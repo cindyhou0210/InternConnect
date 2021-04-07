@@ -1,57 +1,5 @@
 <h1 class="mb-4 mt-2 text-center">Add Your Internship</h1>
 
-<%= form_with url: add_program_path, method: :post, local: true do |form| %>
+<%= render 'form', program: @program %>
 
-  <% comp_ids = Array.new %>
-  <% Company.all.each do |entry| %>
-    <% comp_ids.push ["#{entry.name}" , entry.id] %>
-  <% end %>
-
-  <div class="pb-3">
-    <%= form.label :company_id, "Company:" %>
-    <%= form.select :company_id, comp_ids.sort %>
-    <%= link_to "Don't see your company?", add_company_path, class: "btn btn-outline-dark" %>
-  </div>
-
-  <div class="pb-3">
-    <%= form.label :name, "Program name:" %>
-    <%= form.text_field :name%>
-  </div>
-
-  <div class="pb-3">
-    <%= form.label :field, "Sector:" %>
-    <%= form.text_field :field%>
-  </div>
-
-  <!--
-  <div class="pb-3">
-    <p>This was an unpaid position.</p>
-    <%= form.label :unpaid_true, "True" %>
-    <%= form.radio_button :unpaid, true %>
-    <%= form.label :unpaid_false, "False" %>
-    <%= form.radio_button :unpaid, false %>
-  </div>
-  -->
-
-  <div class="pb-3">
-    <p>This program requires work authorization.</p>
-    <%= form.label :work_auth_true, "True" %>
-    <%= form.radio_button :work_auth, true %>
-    <%= form.label :work_auth_false, "False" %>
-    <%= form.radio_button :work_auth, false %>
-  </div>
-
-   <div class="pb-3">
-    <p>The minimum class standing requirement for this position is </p>
-    <%= form.label :class_stand_2, "Rising Sophomore" %>
-    <%= form.radio_button :class_standing, 2 %>
-    <%= form.label :class_stand_3, "Rising Junior" %>
-    <%= form.radio_button :class_standing, 2 %>
-    <%= form.label :class_stand_4, "Rising Senior" %>
-    <%= form.radio_button :class_standing, 3 %>
-    <%= form.label :class_stand_1, "No restriction" %>
-    <%= form.radio_button :class_standing, 1 %>
-  </div>
-
-  <%= form.submit "Add Program" %>
-<% end %>
+<%= link_to 'Back', new_review_path %>

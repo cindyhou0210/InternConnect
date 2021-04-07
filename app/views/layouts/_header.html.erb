@@ -25,7 +25,7 @@
     <div class="navbar-header">
       <% if logged_in? %>
         
-        <%= link_to "Home", hello_world_path, class: "btn btn-outline-dark" %>
+        <%= link_to "Home", reviews_path, class: "btn btn-outline-dark" %>
       <% else %>
         <%= link_to "Home", landing_path, class: "btn btn-outline-dark" %>
       <% end %>
@@ -35,13 +35,13 @@
       <ul class="nav navbar-right ">
       
         <li><%= link_to " ", user_page_path, class: "mx-1 mt-1 fa fa-user fa-2x" %></li>
-        <li><%= link_to " ", add_review_path, class: "mx-4 mt-1 fa fa-plus-square fa-2x" %></li>
+        <li><%= link_to " ", new_review_path, class: "mx-4 mt-1 fa fa-plus-square fa-2x" %></li>
         <li><%= link_to "Log out", logout_path, class: "btn btn-outline-dark", method: :delete %></li> 
       </ul>
     <% else %>
       <ul class="nav navbar-right ">
        
-        <li><%= link_to " ", add_review_path, class: "mx-4 mt-1 fa fa-plus-square fa-2x" %></li>
+        <li><%= link_to " ", new_review_path, class: "mx-4 mt-1 fa fa-plus-square fa-2x" %></li>
         <li><%= link_to "Log in", login_path, class: "btn btn-outline-dark" %></li> 
         <!--<li><%= link_to "Sign up", signup_path, class: "mx-2" %></li>-->
       </ul>
