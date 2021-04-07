@@ -58,7 +58,7 @@
   <%= @review.comment %>
 </p>
 
-<% if @review.user.user_confid == current_user %>
+<% if @review.user.user_confid == current_user && !current_user.nil? %>
   <%= link_to 'Edit', edit_review_path(@review) %> |
 <% end %>
-<%= link_to 'Back', hello_world_path %>
+<%= link_to 'Back', reviews_path %>

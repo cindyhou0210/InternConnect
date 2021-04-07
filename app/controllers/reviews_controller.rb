@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, only: %i[new edit update destroy ]
   before_action :set_review, only: %i[ show edit update destroy ]
+
+  def index
+    @reviews = Review.all
+  end
 
   def new
     @review = Review.new
