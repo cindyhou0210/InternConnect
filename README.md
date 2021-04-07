@@ -6,5 +6,5 @@ Users are prompted to take a quiz about their personality and skills for our alg
 
 * Ruby version: 2.7.2
 
-* Gems: Cancan, kaminari
+* Gems: Cancan, kaminari, rails_admin
 
