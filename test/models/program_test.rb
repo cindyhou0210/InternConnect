@@ -1,7 +1,8 @@
 require "test_helper"
 
 class ProgramTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save program with empty fields" do
+    program = Program.new
+    assert_not program.save
+  end
 end

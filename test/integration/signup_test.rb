@@ -5,10 +5,10 @@ class SignupTest < ActionDispatch::IntegrationTest
   test "invalid signup information" do
     get signup_path
     assert_no_difference 'UserConfid.count' do
-      post signup_path, params: { user_confid: { name:  "adfs",
+      post signup_path, params: { user_confid: { name:  "",
                                         email: "user@invalid",
-                                        password:              "foo",
-                                        password_confirmation: "bar" } }
+                                        password:              "pw",
+                                        password_confirmation: "pw" } }
     end
     assert_template 'user_confids/new'
   end
