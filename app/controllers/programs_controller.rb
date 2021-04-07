@@ -2,6 +2,7 @@ class ProgramsController < ApplicationController
   before_action :logged_in_user
   
   def new
+    @program = Program.new
   end
 
   def create
@@ -18,6 +19,6 @@ class ProgramsController < ApplicationController
 private
 
   def program_params
-    params.permit(:company_id, :name, :field, :work_auth, :class_standing)
+    params.require(:program).permit(:company_id, :name, :field, :work_auth, :class_standing, :season)
   end
 end
