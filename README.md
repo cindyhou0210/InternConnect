@@ -15,34 +15,34 @@ get landing will direct page back to the home page
 .
 .
 .
-## Home /
+### Home /
 Landing urls: /hello-world
 
-## Reviews /
+### Reviews /
 Reviews urls: /add-review, /add-program, /add-company, /reviews/1, /reviews/2
 
-## Userconfids/
+### Userconfids/
 Userconfids urls: /userconfids/new, /userconfids/create, /users/delete, /users/show
 
-## Quiz /
+### Quiz /
 Quiz urls: /quiz/question1
 
 
-## Display user login prompt, and check for correct password and username: /login
+### Display user login prompt, and check for correct password and username: /login
 
-## Display the user registration page: /signup
-## logout: /logout
-
-
+### Display the user registration page: /signup
+### logout: /logout
 
 
-Views:
-*User Page
-#show
+
+
+# Views:
+##User Page
+### show
 Display user infornation-serves as a management page for users to view their posts. User can delete posts on this page
 Posts are displayed in the form of cards. Card containes infomration about the post title, time posted, and description of the post
 
-*Layout
-#header
+## Layout
+### header
 Display Home button on the top left corner that allows users to direct back to the home page
 Display User button, add post button, and log out button on the top right side 
