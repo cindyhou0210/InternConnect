@@ -1,4 +1,4 @@
-Inline-style: ![alt text](https://github.com/cindyhou/InternConnect/app/assets/images/Group_8.png "Logo Title Text 1")
+![alt text](https://github.com/cindyhou0210/InternConnect/app/assets/images/Group_8.png "Logo Title Text 1")
 
 # README
 InternConenect is platform to discover internships and connect with others who have completed internships at an array of different companies. 
