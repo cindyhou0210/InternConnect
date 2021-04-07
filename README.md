@@ -2,12 +2,6 @@
 InternConenect is platform to discover internships and connect with others who have completed internships at an array of different companies. 
 Users are prompted to take a quiz about their personality and skills for our algorithm to match them up with the perfect internship.
 
-
-
-* Ruby version: 2.7.2
-
-* Gems: Cancan, kaminari, rails_admin
-
 # Routes:
 get user-page-path will direct page to the user page 
 get quiz creats a quiz for a user. User and quiz has a one to one relationsihp
@@ -37,7 +31,7 @@ Quiz urls: /quiz/question1
 
 
 # Views:
-##User Page
+## User Page
 ### show
 Display user infornation-serves as a management page for users to view their posts. User can delete posts on this page
 Posts are displayed in the form of cards. Card containes infomration about the post title, time posted, and description of the post
@@ -46,3 +40,8 @@ Posts are displayed in the form of cards. Card containes infomration about the p
 ### header
 Display Home button on the top left corner that allows users to direct back to the home page
 Display User button, add post button, and log out button on the top right side 
+
+# Gems and API
+## Ruby version: 2.7.2
+
+## Gems: Cancan, kaminari, rails_admin
