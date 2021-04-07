@@ -1,4 +1,4 @@
-![alt text](https://github.com/cindyhou0210/InternConnect/app/assets/images/Group_8.png "Logo Title Text 1")
+![Alt text](relative/path/to/Group_8.png?raw=true "Title")
 
 # README
 InternConenect is platform to discover internships and connect with others who have completed internships at an array of different companies. 
