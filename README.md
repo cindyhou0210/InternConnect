@@ -8,7 +8,32 @@ Users are prompted to take a quiz about their personality and skills for our alg
 
 * Gems: Cancan, kaminari, rails_admin
 
-Identify and describe your key views and models. Use rails generators to generate scaffolding for your key models and views. At this point you should be getting close to something working a little bit. As soon as you start adding code to your controllers, models and views, it will get more difficult to run scaffold generation. But feel free to use a generated scaffold as sample code to remember the standard idioms
+# Routes:
+get user-page-path will direct page to the user page 
+get quiz creats a quiz for a user. User and quiz has a one to one relationsihp
+get landing will direct page back to the home page
+.
+.
+.
+## Home /
+Landing urls: /hello-world
+
+## Reviews /
+Reviews urls: /add-review, /add-program, /add-company, /reviews/1, /reviews/2
+
+## Userconfids/
+Userconfids urls: /userconfids/new, /userconfids/create, /users/delete, /users/show
+
+## Quiz /
+Quiz urls: /quiz/question1
+
+
+## Display user login prompt, and check for correct password and username: /login
+
+## Display the user registration page: /signup
+## logout: /logout
+
+
 
 
 Views:
