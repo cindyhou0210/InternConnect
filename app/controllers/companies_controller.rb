@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     if @company.save
       flash[:success] = "Your company has been added!"
-      redirect_to add_program_path
+      redirect_to new_program_path
     else
       render 'new'
     end

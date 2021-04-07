@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   post '/quiz', to: 'quiz#create'
   get '/signup', to: 'user_confids#new'
   post '/signup', to: 'user_confids#create'
-  get '/add-review', to: 'reviews#new'
+#  get '/add-review', to: 'reviews#new'
   get '/user-page', to: 'userpage#show'
   get '/hello-world', to: 'hello_world#home'
-  get    '/add-program',   to: 'programs#new'
-  get    '/add-company',   to: 'companies#new'
+#  get    '/add-program',   to: 'programs#new'
+#  get    '/add-company',   to: 'companies#new'
   resources :user_confids
   resources :quizzes
 end

@@ -9,7 +9,7 @@ class ProgramsController < ApplicationController
     @program = Program.new(program_params)
     if @program.save
       flash[:success] = "Your program has been added!"
-      redirect_to add_review_path
+      redirect_to new_review_path
     else
       render 'new'
     end
