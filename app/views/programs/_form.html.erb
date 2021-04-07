@@ -22,6 +22,20 @@
     <%= form.text_field :field%>
   </div>
 
+  <div class="pb-3">
+    <p>This program is paid.</p>
+    <%= form.label :paid_true, "True" %>
+    <%= form.radio_button :paid, true %>
+    <%= form.label :paid, "False" %>
+    <%= form.radio_button :paid, false %>
+  </div>
+
+  <div class="pb-3">
+    <p>What season did this program take place?</p>
+    <%= form.label :season %>
+    <%= form.text_field :season%>
+  </div>
+
 
   <div class="pb-3">
     <p>This program requires work authorization.</p>
