@@ -9,6 +9,7 @@ one:
   independence: 1
   leadership: 1
   multitasking: 1
+  class_standing: 1
 
 two:
   user_id: 1
@@ -19,3 +20,4 @@ two:
   independence: 1
   leadership: 1
   multitasking: 1
+  class_standing: 1

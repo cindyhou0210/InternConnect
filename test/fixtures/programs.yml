@@ -2,16 +2,18 @@
 
 one:
   name: MyString
-  type: 
+  field: MyString
   paid: false
   work_auth: false
   class_standing: 1
-  company: 1
+  company_id: 1
+  season: MyString
 
 two:
   name: MyString
-  type: 
+  field: MyString
   paid: false
   work_auth: false
   class_standing: 1
-  company: 1
+  company_id: 1
+  season: MyString
