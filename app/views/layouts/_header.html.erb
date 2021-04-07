@@ -1,15 +1,24 @@
-
 <nav class="navbar mb-2">
   <style type="text/css">
-  .fa-plus-square{
-    color: black;
-    
-  }
+    .fa-plus-square{
+      color: black;
+      
+    }
 
-  .fa-plus-square:hover{
-    color: grey;
-    text-decoration: none;
-  }
+    .fa-plus-square:hover{
+      color: grey;
+      text-decoration: none;
+    }
+
+    .fa-user{
+      color: black;
+    }
+
+    .fa-user:hover{
+      color: grey;
+      text-decoration: none;
+    }
+
 
   </style>
   <div class="container-fluid">
@@ -24,7 +33,9 @@
     </div>
     <% if logged_in? %>
       <ul class="nav navbar-right ">
-       <li><%= link_to " ", add_review_path, class: "mx-4 mt-1 fa fa-plus-square fa-2x" %></li>
+      
+        <li><%= link_to " ", user_page_path, class: "mx-1 mt-1 fa fa-user fa-2x" %></li>
+        <li><%= link_to " ", add_review_path, class: "mx-4 mt-1 fa fa-plus-square fa-2x" %></li>
         <li><%= link_to "Log out", logout_path, class: "btn btn-outline-dark", method: :delete %></li> 
       </ul>
     <% else %>
