@@ -20,9 +20,7 @@ Rails.application.routes.draw do
   get '/user-page', to: 'userpage#show'
   get '/hello-world', to: 'hello_world#home'
   get    '/add-program',   to: 'programs#new'
-  #post '/add-program', to: 'programs#create'
   get    '/add-company',   to: 'companies#new'
-  post '/add-company', to: 'companies#create'
   resources :user_confids
   resources :quizzes
 end

@@ -19,6 +19,6 @@ class ProgramsController < ApplicationController
 private
 
   def program_params
-    params.require(:program).permit(:company_id, :name, :field, :work_auth, :class_standing, :season)
+    params.require(:program).permit(:company_id, :name, :field, :paid, :work_auth, :class_standing, :season)
   end
 end
