@@ -1,7 +1,8 @@
 require "test_helper"
 
 class CompanyTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save company with empty fields" do
+    company = Company.new
+    assert_not company.save
+  end
 end

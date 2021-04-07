@@ -2,6 +2,7 @@ class CompaniesController < ApplicationController
   before_action :logged_in_user
   
   def new
+    @company = Company.new
   end
 
   def create
@@ -18,6 +19,6 @@ class CompaniesController < ApplicationController
 private
 
   def company_params
-    params.permit(:name, :field, :stage, :description)
+    params.require(:company).permit(:name, :field, :stage, :description)
   end
 end
