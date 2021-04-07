@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fix frontend paddling
 <div class="center">
   <%= link_to image_tag("Group_8.png", alt: "InternConnect"), '#' %>
 </div>
@@ -17,6 +20,7 @@
         </tr>
       </thead>
 
+<<<<<<< HEAD
 
       <tbody>
           <% @reviews.each do |review| %>
@@ -37,6 +41,24 @@
                   
                 <% end %>
               </tr>
+=======
+      <tbody>
+        <% @reviews.each do |review| %>
+          <tr>
+            <td><%= review.user.name %></td>
+            <td><%= review.program.name %></td>
+            <td><%= review.program.company.name %></td>
+            <td><%= review.comment %></td>
+
+            <% if review.user.user_confid == current_user %>
+              <td><%= link_to 'Show', review %></td>  
+              <td><%= link_to 'Edit', edit_review_path(review) %></td>
+              <td><%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% else %>
+              <td><%= link_to 'Show', review %></td>  
+            <% end %>
+          </tr>
+>>>>>>> fix frontend paddling
         <% end %>
       </tbody>
     </table>
@@ -51,5 +73,8 @@
 
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> Correct routes and add index to reviews
+=======
+>>>>>>> fix frontend paddling
