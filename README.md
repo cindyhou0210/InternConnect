@@ -1,5 +1,4 @@
-![Alt text](relative/path/to/Group_8.png?raw=true "Title")
-
+![Image description](https://github.com/cindyhou0210/InternConnect/blob/main/app/assets/images/Group_8.png)
 # README
 InternConenect is platform to discover internships and connect with others who have completed internships at an array of different companies. 
 Users are prompted to take a quiz about their personality and skills for our algorithm to match them up with the perfect internship.
