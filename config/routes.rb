@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   get    '/add-company',   to: 'companies#new'
   post '/add-company', to: 'companies#create'
   resources :user_confids
+  resources :quizzes
 end
