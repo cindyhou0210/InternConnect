@@ -15,6 +15,7 @@ class UserConfidsController < ApplicationController
           @user_acc = User.new(name: user_params[:name], major: nil, class_year: nil, bio: nil, title: nil, 
             user_confid_id: UserConfid.where(:email => user_params[:email]).first.id)
           if @user_acc.save
+            log_in @user
             flash[:success] = "Welcome to the app!"
             redirect_to @user
           end
