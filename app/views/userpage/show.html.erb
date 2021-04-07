@@ -20,20 +20,23 @@
         <div class="card shadow p-3 mb-5 bg-white rounded">
           <img class="card-img-top" src="logo.png" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title" style="color: black;">
+                <h5 class="card-title" style="color: black;">
                 <%= review.program.name %>
                 <h6 class="card-subtitle mb-2 text-muted">
                     Updated at
                     <%= review.updated_at %>
                 </h6>
-                <p class="card-text"><%= review.comment %></p>
-              </h5>
-              <%= link_to "Delete",review, method: :delete, class: "text-blue" %>
-             
+                <div class= "row justify-content-left">
+                    <div class= "box">
+                        <p class="card-text"><%= review.comment %></p>
+                    </div>
+                </div>
+                </h5>
+                <%= link_to "Delete",review, method: :delete, class: "text-blue" %>
             </div>
-          
         </div>
       </div>
     <% end %> 
   <% end %>
 </div>
+
