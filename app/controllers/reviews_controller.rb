@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     if @review.save
       flash[:success] = "Your review has been added!"
-      redirect_to hello_world_path
+      redirect_to reviews_path
     else
       render 'new'
     end
@@ -26,9 +26,8 @@ class ReviewsController < ApplicationController
   def update
     if @review.update(review_params)
       flash[:success] = "Your review was successfully updated."
-      redirect_to hello_world_path
+      redirect_to reviews_path
     else
-      flash[:danger] = "Please correct the errors."
       render :edit
     end
   end
@@ -39,7 +38,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     flash[:success] = "Your review was successfully deleted."
-    redirect_to hello_world_path
+    redirect_to reviews_path
   end
 
 private
