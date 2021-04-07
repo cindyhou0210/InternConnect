@@ -1,4 +1,5 @@
 class UserConfid < ApplicationRecord
+    belongs_to :user
     has_many :items
     has_secure_password
     before_save { self.email = email.downcase }

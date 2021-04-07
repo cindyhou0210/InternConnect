@@ -22,6 +22,12 @@
             <td><%= review.program.name %></td>
             <td><%= review.program.company.name %></td>
             <td><%= review.comment %></td>
+
+            <% if review.user.user_confid == current_user %>
+              <td><%= link_to 'Show', review %></td>
+              <td><%= link_to 'Edit', edit_review_path(review) %></td>
+              <td><%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

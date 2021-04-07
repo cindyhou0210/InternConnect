@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   post '/quiz', to: 'quiz#create'
   get '/signup', to: 'user_confids#new'
   get '/add-review', to: 'reviews#new'
-  post '/add-review', to: 'reviews#create'
   get '/hello-world', to: 'hello_world#home'
   get    '/add-program',   to: 'programs#new'
   post '/add-program', to: 'programs#create'
