@@ -21,9 +21,11 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      format.html { redirect_to @instructor, notice: "Instructor was successfully updated." }
+      flash[:success] = "Your review was successfully updated."
+      redirect_to hello_world_path
     else
-      format.html { render :edit, status: :unprocessable_entity }
+      flash[:danger] = "Please correct the errors."
+      render :edit
     end
   end
 

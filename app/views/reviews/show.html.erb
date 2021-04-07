@@ -1,16 +1,61 @@
 <p>
-  <strong>Name:</strong>
+  <strong>User:</strong>
   <%= @review.user.name %>
 </p>
 
 <p>
-  <strong>Last:</strong>
-  <%= @review.last %>
+  <strong>Program:</strong>
+  <%= @review.program.name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @review.email %>
+  <strong>Company:</strong>
+  <%= @review.program.company.name %>
+</p>
+
+<div class = "text-center container mb-3">
+  <div class = "row">
+        <div class= "col border border-dark">
+          Collaboration
+        </div>
+        <div class= "col border border-dark">
+          Independence
+        </div>
+        <div class= "col border border-dark">
+          Leadership
+        </div>
+        <div class= "col border border-dark">
+          Multitasking
+        </div>
+        <div class= "col border border-dark">
+          Compensation
+        </div>
+      </div>
+
+    <div class = "row">
+        <div class= "col  border border-dark">
+          <%= @review.collaboration %>
+        </div>
+        <div class= "col border border-dark">
+          <%= @review.independence %>
+        </div>
+        <div class= "col border border-dark">
+          <%= @review.leadership %>
+        </div>
+        <div class= "col border border-dark">
+          <%= @review.multitasking %>
+        </div>
+        <div class= "col border border-dark">
+          <% if !@review.compensation.nil? %>
+            $<%= @review.compensation %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+<p>
+  <strong>Review:</strong>
+  <%= @review.comment %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |

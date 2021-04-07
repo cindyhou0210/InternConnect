@@ -1,7 +1,7 @@
 <%= form_with(model: review, local: true) do |form| %>
 
   <div class="pb-3">
-    <%= form.hidden_field :user_id, value: User.where(:userconf_id => current_user.id).first.id %>
+    <%= form.hidden_field :user_id, value: User.where(:user_confid => current_user).first.id %>
   </div>
 
   <% prog_ids = Array.new %>
@@ -50,11 +50,9 @@
   </div>
 
   <div class="pb-3">
-    <p>This was an unpaid position.</p>
-    <%= form.label :unpaid_true, "True" %>
-    <%= form.radio_button :unpaid, true %>
-    <%= form.label :unpaid_false, "False" %>
-    <%= form.radio_button :unpaid, false %>
+    <p>What was the compensation for this internship?</p>
+    <%= form.label :compensation, "Amount ($)" %> <!--Maybe add dropdown with currencies -->
+    <%= form.number_field :compensation %>
   </div>
 
   <div class="pb-3">
