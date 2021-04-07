@@ -15,11 +15,12 @@ Rails.application.routes.draw do
   get '/quiz', to: 'quiz#question1'
   post '/quiz', to: 'quiz#create'
   get '/signup', to: 'user_confids#new'
+  post '/signup', to: 'user_confids#create'
   get '/add-review', to: 'reviews#new'
   get '/user-page', to: 'userpage#show'
   get '/hello-world', to: 'hello_world#home'
   get    '/add-program',   to: 'programs#new'
-  post '/add-program', to: 'programs#create'
+  #post '/add-program', to: 'programs#create'
   get    '/add-company',   to: 'companies#new'
   post '/add-company', to: 'companies#create'
   resources :user_confids

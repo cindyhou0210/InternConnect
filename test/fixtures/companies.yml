@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  type: 
+  field: MyString
   stage: MyString
   description: MyText
 
 two:
   name: MyString
-  type: 
+  field: MyString
   stage: MyString
   description: MyText

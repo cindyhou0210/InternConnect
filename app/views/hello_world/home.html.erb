@@ -16,22 +16,26 @@
         </tr>
       </thead>
 
-      <tbody>
-        <% @reviews.each do |review| %>
-          <tr>
-            <td><%= review.user.name %></td>
-            <td><%= review.program.name %></td>
-            <td><%= review.program.company.name %></td>
-            <td><%= review.comment %></td>
 
-            <% if review.user.user_confid == current_user %>
-              <td><%= link_to 'Show', review %></td>  
-              <td><%= link_to 'Edit', edit_review_path(review) %></td>
-              <td><%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% else %>
-              <td><%= link_to 'Show', review %></td>  
-            <% end %>
-          </tr>
+      <tbody>
+          <% @reviews.each do |review| %>
+              <tr>
+                <% if !review.user.nil? || !review.program.nil?%>
+                  <td><%= review.user.name %></td>
+                  <td><%= review.program.name %></td>
+                  <td><%= review.program.company.name %></td>
+                  <td><%= review.comment %></td>
+
+                  <% if review.user.user_confid == current_user && !current_user.nil? %>
+                    <td><%= link_to 'Show', review %></td>  
+                    <td><%= link_to 'Edit', edit_review_path(review) %></td>
+                    <td><%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% else %>
+                    <td><%= link_to 'Show', review %></td>  
+                  <% end %>
+                  
+                <% end %>
+              </tr>
         <% end %>
       </tbody>
     </table>
