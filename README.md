@@ -45,7 +45,8 @@ Display User button, add post button, and log out button on the top right side
 ## UX Design and User Flow
 
 ### User Flow
-![Image description](https://github.com/cindyhou0210/InternConnect/blob/main/app/assets/images/UX Flow.png)
+
+![Image description](https://github.com/cindyhou0210/InternConnect/blob/main/app/assets/images/UX_Flow.png)
 
 
 # Gems and API
