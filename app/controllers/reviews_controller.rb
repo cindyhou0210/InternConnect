@@ -33,6 +33,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @review = Review.order(created_at: :desc).page(params[:page])
   end
 
   def destroy
