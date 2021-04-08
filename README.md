@@ -42,6 +42,12 @@ Posts are displayed in the form of cards. Card containes infomration about the p
 Display Home button on the top left corner that allows users to direct back to the home page
 Display User button, add post button, and log out button on the top right side 
 
+## UX Design and User Flow
+
+### User Flow
+![Image description](https://github.com/cindyhou0210/InternConnect/blob/main/app/assets/images/UX Flow.png)
+
+
 # Gems and API
 ## Ruby version: 2.7.2
 
