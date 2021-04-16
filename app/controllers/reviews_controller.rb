@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
 
   def index
-    @reviews = Review.all
+    @reviews = Review.order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -33,7 +33,6 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.order(created_at: :desc).page(params[:page])
   end
 
   def destroy

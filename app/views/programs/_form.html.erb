@@ -31,13 +31,6 @@
   </div>
 
   <div class="pb-3">
-    <p>What season did this program take place?</p>
-    <%= form.label :season %>
-    <%= form.text_field :season%>
-  </div>
-
-
-  <div class="pb-3">
     <p>This program requires work authorization.</p>
     <%= form.label :work_auth_true, "True" %>
     <%= form.radio_button :work_auth, true %>
@@ -55,6 +48,16 @@
     <%= form.radio_button :class_standing, 3 %>
     <%= form.label :class_stand_1, "No restriction" %>
     <%= form.radio_button :class_standing, 1 %>
+  </div>
+
+  <div class="pb-3">
+    <p>What season did the program take place?</p>
+    <%= form.label :season_1, "Summer (May - September)" %>
+    <%= form.radio_button :season, "Summer" %>
+    <%= form.label :season, "Fall (October - December)" %>
+    <%= form.radio_button :season, "Fall" %>
+    <%= form.label :season_3, "Spring (January - May)" %>
+    <%= form.radio_button :season, "Spring" %>
   </div>
 
   <%= form.submit "Add Program" %>
