@@ -1,4 +1,6 @@
 class UserConfid < ApplicationRecord
+    include Gravtastic
+    gravtastic
     has_secure_password
     before_save { self.email = email.downcase }
     validates :name, presence: true

@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.image.attach(params[:image])
     if @review.save
       flash[:success] = "Your review has been added!"
       redirect_to reviews_path
@@ -45,7 +46,7 @@ private
 
   def review_params
     params.require(:review).permit(:user_id, :comment, :program_id, :collaboration, 
-                                   :independence, :compensation, :leadership, :multitasking)
+                                   :independence, :compensation, :leadership, :multitasking, :image)
   end
 
   def set_review

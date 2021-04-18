@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 2021_04_16_190446) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
   create_table "programs", force: :cascade do |t|
     t.string "name"
     t.string "field"
@@ -113,4 +121,5 @@ ActiveRecord::Schema.define(version: 2021_04_16_190446) do
     t.integer "user_confid_id"
   end
 
+  add_foreign_key "items", "users"
 end

@@ -57,6 +57,9 @@
   <strong>Review:</strong>
   <%= @review.comment %>
 </p>
+<% if @review.image.attached? %>            
+  <image src="<%=(url_for(@review.image))%>">
+<% end %>
 
 <% if @review.user.user_confid == current_user && !current_user.nil? %>
   <%= link_to 'Edit', edit_review_path(@review) %> |

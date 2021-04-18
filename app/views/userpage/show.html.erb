@@ -18,7 +18,9 @@
     <% if review.user.name == @user.name %>
       <div class="col-4">
         <div class="card shadow p-3 mb-5 bg-white rounded">
-          <img class="card-img-top" src="logo.png" alt="Card image cap">
+          <% if review.image.attached? %>
+            <img class="card-img-top" src="<%=(url_for(review.image))%>" alt="Card image cap">
+          <% end %>
             <div class="card-body">
                 <h5 class="card-title" style="color: black;">
                 <%= review.program.name %>
