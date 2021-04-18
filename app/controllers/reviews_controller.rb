@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, only: %i[new edit update destroy ]
   before_action :set_review, only: %i[ show edit update destroy ]
+
+  def index
+    @reviews = Review.order(created_at: :desc).page(params[:page])
+  end
 
   def new
     @review = Review.new
@@ -10,7 +14,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     if @review.save
       flash[:success] = "Your review has been added!"
-      redirect_to hello_world_path
+      redirect_to reviews_path
     else
       render 'new'
     end
@@ -22,21 +26,19 @@ class ReviewsController < ApplicationController
   def update
     if @review.update(review_params)
       flash[:success] = "Your review was successfully updated."
-      redirect_to hello_world_path
+      redirect_to reviews_path
     else
-      flash[:danger] = "Please correct the errors."
       render :edit
     end
   end
 
   def show
-    @review = Review.order(created_at: :desc).page(params[:page])
   end
 
   def destroy
     @review.destroy
     flash[:success] = "Your review was successfully deleted."
-    redirect_to hello_world_path
+    redirect_to reviews_path
   end
 
 private

@@ -1,7 +1,8 @@
 require "test_helper"
 
 class ReviewTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save review with empty fields" do
+    review = Review.new
+    assert_not review.save
+  end
 end
