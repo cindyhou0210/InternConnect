@@ -1,5 +1,5 @@
 class UserConfidsController < ApplicationController
-    before_action :logged_in_user, only: [:show]
+    before_action :logged_in_user, only: [:show :mailboxer_email]
     def show
         @user = UserConfid.find(params[:id])
         @reviews = Review.all
