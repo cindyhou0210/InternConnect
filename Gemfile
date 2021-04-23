@@ -12,6 +12,7 @@ gem 'bcrypt'
 #RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data.
 gem 'rails_admin', '~> 2.0'
 gem 'cancan'
+gem 'gmaps4rails'
 gem 'kaminari'
 gem 'gravtastic'
 # Use Puma as the app server

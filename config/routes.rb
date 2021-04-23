@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :routers
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #get 'hello_world/home'
   get    '/login',   to: 'sessions#new'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   root 'hello_world#landing'
   get '/landing', to: 'hello_world#landing'
 
+  get '/coffee', to: 'map#show'
   get '/quiz', to: 'quiz#question1'
   post '/quiz', to: 'quiz#create'
   get '/signup', to: 'user_confids#new'

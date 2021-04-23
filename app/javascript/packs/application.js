@@ -7,6 +7,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require gmaps/google
 
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
