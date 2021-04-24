@@ -21,6 +21,15 @@ Rails.application.routes.draw do
   get '/user-page', to: 'userpage#show'
   resources :user_confids
   resources :quizzes
-  resources :conversations, only: [:index, :show, :destroy]
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+      post :restore
+    end
+
+    collection do
+      delete :empty_trash
+    end
+  end
   resources :messages, only: [:new, :create]
 end

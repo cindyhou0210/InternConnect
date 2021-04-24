@@ -43,4 +43,13 @@
     <div class="text-center">
       <%= link_to "Add Your Review", new_review_path, class: "btn btn-outline-dark" %>
     </div>
+
+    <div class="container text-center pt-3 pb-2">
+      <%= page_entries_info @reviews, entry_name: 'review' %>
+    </div>
+
+    <div class="container text-center">
+      <%= link_to_prev_page @reviews, 'Previous Page' %>
+      <%= link_to_next_page @reviews, 'Next Page' %>
+    </div>
   </div>

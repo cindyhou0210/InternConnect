@@ -2,6 +2,7 @@ class Review < ApplicationRecord
   belongs_to :program
   belongs_to :user
   has_one_attached :image
+  paginates_per 10
 
   validates :comment, presence: true
   validates :collaboration, presence: true
