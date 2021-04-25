@@ -19,6 +19,15 @@
       text-decoration: none;
     }
 
+    .fa-inbox{
+      color: black;
+    }
+
+    .fa-inbox:hover{
+      color: grey;
+      text-decoration: none;
+    }
+
 
   </style>
   <div class="container-fluid">
@@ -36,9 +45,10 @@
       <ul class="nav navbar-right ">
         
         <!--<%= image_tag current_user.gravatar_url(:email => current_user.email), :class => "gravatar" %>-->
-        <%= image_tag current_user.gravatar_url(:email => current_user.email), class: "mx-4 mt-1", style: "height: 30px; width: auto" %>
-        <li><%= link_to " ", user_page_path, class: "mx-1 mt-1 fa fa-user fa-2x" %></li>
-        <li><%= link_to "Your Conversations", conversations_path %></li>
+        <%= image_tag current_user.gravatar_url(:email => current_user.email), class: "mx-1 mt-1", style: "height: 30px; width: auto" %>
+        <li><%= link_to " ", user_page_path, class: "mx-4 mt-1 fa fa-user fa-2x" %></li>
+        <li><%= link_to " ", conversations_path, class: "mx-1 mt-1 fa fa-inbox fa-2x" %></li>
+        <!--<li><%= link_to "Your Conversations", conversations_path %></li>-->
         <li><%= link_to " ", new_review_path, class: "mx-4 mt-1 fa fa-plus-square fa-2x" %></li>
         <li><%= link_to "Log out", logout_path, class: "btn btn-outline-dark", method: :delete %></li> 
       </ul>
