@@ -15,6 +15,7 @@ gem 'cancan'
 gem 'gmaps4rails'
 gem 'kaminari'
 gem 'gravtastic'
+gem 'geocoder'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets

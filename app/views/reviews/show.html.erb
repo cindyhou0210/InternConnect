@@ -1,19 +1,76 @@
-<p>
-  <strong>User:</strong>
-  <%= @review.user.name %>
-</p>
+<style type="text/css">
+    
+    .card{
+      border-radius: 25px;
+      
+    }
 
-<p>
-  <strong>Program:</strong>
-  <%= @review.program.name %>
-</p>
 
-<p>
-  <strong>Company:</strong>
-  <%= @review.program.company.name %>
-</p>
+</style>
 
-<div class = "text-center container mb-3">
+<div class= "text-center">
+  <% if @review.image.attached? %>            
+  <image src="<%=(url_for(@review.image))%>", style="width: auto; height: 300px">
+  <% end %>
+</div>
+
+<div class="container text-center mt-4">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <p>
+            
+            <strong>
+              <h4> Posted by </h4>
+            </strong>
+          
+            <%= image_tag current_user.gravatar_url(:email => current_user.email), class: "mx-1 mt-1", style: "height: 20px; width: 20px" %>
+            <%= @review.user.name %>
+          </p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="col-sm">
+      <div class="card">
+          <div class="card-body">
+            <p>
+              <strong>
+                <h4> Program </h4>
+                
+              </strong>
+              <%= @review.program.name %>
+            
+            </p>
+          </div>
+          
+      </div>
+   
+    </div>
+
+    <div class="col-sm">
+        <div class="card">
+          <div class="card-body">
+            <p>
+              <strong>
+              <h4> Company </h4>
+              
+              </strong>
+              <%= @review.program.company.name %>
+            
+            </p>
+          </div>
+        
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class = "text-center container mb-3 mt-3">
   <div class = "row">
         <div class= "col border border-dark">
           Collaboration
@@ -53,13 +110,18 @@
       </div>
   </div>
 
-<p>
-  <strong>Review:</strong>
-  <%= @review.comment %>
-</p>
-<% if @review.image.attached? %>            
-  <image src="<%=(url_for(@review.image))%>">
-<% end %>
+  <p>
+        <strong>
+          <h3> Description </h3>
+        </strong>
+      
+        
+        <%= @review.comment %>
+        <% @five %>
+    </p>
+
+
+
 
 <% if @review.user.user_confid == current_user && !current_user.nil? %>
   <%= link_to 'Edit', edit_review_path(@review) %> |
