@@ -1,0 +1,113 @@
+<%= form_with(model: @quiz, local: true) do |form| %>
+  <%= render 'shared/error_messages', mod: @quiz %>
+
+  <% if logged_in? %>
+    <div class="pb-3">
+        <%= form.hidden_field :user_id, value: User.where(:user_confid => current_user).first.id %>
+    </div>
+  <% end %>
+
+  <div class = "pb-3">
+    <p>Would you take an unpaid position?</p>
+    <%= form.label :unpaid_true, "Yes" %>
+    <%= form.radio_button :unpaid, true %>
+    <%= form.label :unpaid_false, "No" %>
+    <%= form.radio_button :unpaid, false %>
+  </div>
+
+  <div class = "pb-3">
+    <p>What is your job preference?</p>
+    <%= form.label :job_preference %>
+    <%= form.text_field :job_preference %>
+  </div>
+
+  <div class = "pb-3">
+    <p>Does the position you're looking for require work authorization?</p>
+    <%= form.label :work_auth_true, "Yes" %>
+    <%= form.radio_button :work_auth, true %>
+    <%= form.label :work_auth_false, "No" %>
+    <%= form.radio_button :work_auth, false %>
+  </div>
+
+  <div class="pb-3">
+    <p>On a scale of 1 to 5, how important is collaboration in a position?</p>
+    <%= form.label :collab_1, "1" %>
+    <%= form.radio_button :collaboration, 1 %>
+    <%= form.label :collab_2, "2" %>
+    <%= form.radio_button :collaboration, 2 %>
+    <%= form.label :collab_3, "3" %>
+    <%= form.radio_button :collaboration, 3 %>
+    <%= form.label :collab_4, "4" %>
+    <%= form.radio_button :collaboration, 4 %>
+    <%= form.label :collab_5, "5" %>
+    <%= form.radio_button :collaboration, 5 %>
+  </div>
+
+  <div class="pb-3">
+    <p>On a scale of 1 to 5, how important is independence in a position?</p>
+    <%= form.label :indep_1, "1" %>
+    <%= form.radio_button :independence, 1 %>
+    <%= form.label :indep_2, "2" %>
+    <%= form.radio_button :independence, 2 %>
+    <%= form.label :indep_3, "3" %>
+    <%= form.radio_button :independence, 3 %>
+    <%= form.label :indep_4, "4" %>
+    <%= form.radio_button :independence, 4 %>
+    <%= form.label :indep_5, "5" %>
+    <%= form.radio_button :independence, 5 %>
+  </div>
+
+  <div class="pb-3">
+    <p>About how much is the pay you are looking for?</p>
+    <%= form.label :pay_preference, "Amount ($)" %> <!--Maybe add dropdown with currencies -->
+    <%= form.number_field :pay_preference %>
+  </div>
+
+  <div class="pb-3">
+    <p>On a scale of 1 to 5, how important is leadership in a position?</p>
+    <%= form.label :lead_1, "1" %>
+    <%= form.radio_button :leadership, 1 %>
+    <%= form.label :lead_2, "2" %>
+    <%= form.radio_button :leadership, 2 %>
+    <%= form.label :lead_3, "3" %>
+    <%= form.radio_button :leadership, 3 %>
+    <%= form.label :lead_4, "4" %>
+    <%= form.radio_button :leadership, 4 %>
+    <%= form.label :lead_5, "5" %>
+    <%= form.radio_button :leadership, 5 %>
+  </div>
+
+  <div class="pb-3">
+    <p>On a scale of 1 to 5, how important is multitasking in a position?</p>
+    <%= form.label :multi_1, "1" %>
+    <%= form.radio_button :multitasking, 1 %>
+    <%= form.label :multi_2, "2" %>
+    <%= form.radio_button :multitasking, 2 %>
+    <%= form.label :multi_3, "3" %>
+    <%= form.radio_button :multitasking, 3 %>
+    <%= form.label :multi_4, "4" %>
+    <%= form.radio_button :multitasking, 4 %>
+    <%= form.label :multi_5, "5" %>
+    <%= form.radio_button :multitasking, 5 %>
+  </div>
+
+  <div class="pb-3">
+    <p>What is your class standing?</p>
+    <%= form.label :class_stand_1, "Freshman" %>
+    <%= form.radio_button :class_standing, 1 %>
+    <%= form.label :class_stand_2, "Sophomore" %>
+    <%= form.radio_button :class_standing, 2 %>
+    <%= form.label :class_stand_3, "Junior" %>
+    <%= form.radio_button :class_standing, 3 %>
+    <%= form.label :class_stand_4, "Senior" %>
+    <%= form.radio_button :class_standing, 4 %>
+  </div>
+
+  <div class = "pb-3">
+    <p>What season do you want to work in??</p>
+    <%= form.label :season %>
+    <%= form.text_field :season %>
+  </div>
+
+  <%= form.submit "Submit Quiz" %>
+<% end %>
