@@ -1,14 +1,133 @@
-<div class="row">
-  
-</div>
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
-    <p class="lead">Explore our review session and get started with your career now!</p>
-    <p class="lead">
-    <%= link_to "See reviews", reviews_path, class: "btn btn-outline-dark"%>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
 
-  </p>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+}
+
+.fa-edit{
+  position: absolute;
+  bottom:8; 
+  left:0;
+  
+}
+</style>
+
+
+
+
+
+<% if @user.banner.attached? %>
+    <div class="jumbotron jumbotron-fluid " style="background-image: url("<%= @user.banner%>")">
+<% else %>
+
+  <div class="jumbotron jumbotron-fluid "style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 100%,rgba(255,255,255,0.9) 100%), url(https://placeimg.com/1000/480/nature)">
+<% end %>
+  <div class="container">
+      
+      
+     <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+          
+        </div>
+        <div class="col-md-auto">
+          <%= image_tag current_user.gravatar_url(:email => current_user.email), class: "rounded-circle mx-auto d-block shadow p-1", style: "height: 100px; width: auto" %>
+        </div>
+        <div class="col col-lg-2">
+          <icon id="myBtn" class= "fa fa-edit fa-2x"></icon>
+        </div>
+     </div>
+      
+      
+      
+      
+      <!-- Trigger/Open The Modal -->
+      
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <%= form_with(model: @user_confids, local: true) do |form| %>
+          <%= form.file_field :banner %><br>
+          <%= form.submit "Submit Review" %>
+        <% end %>
+      </div>
+      <script>
+          // Get the modal
+          var modal = document.getElementById("myModal");
+
+          // Get the button that opens the modal
+          var btn = document.getElementById("myBtn");
+
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+
+          // When the user clicks the button, open the modal 
+          btn.onclick = function() {
+            modal.style.display = "block";
+          }
+
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+      </script>
+
+</div>
+      
+      <p class="text-md mt-3 text-center font-weight-bold"><%= current_user.name %></p>
+      
+      
+    
   </div>
   
 </div>
@@ -18,8 +137,10 @@
     <% if review.user.name == @user.name %>
       <div class="col-4">
         <div class="card shadow p-3 mb-5 bg-white rounded">
+
           <% if review.image.attached? %>
-            <img class="card-img-top" src="<%=(url_for(review.image))%>" alt="Card image cap">
+            
+            <img class="card-img-top" src="<%=(url_for(review.image))%>" alt="Card image cap", style="width: auto; height: 300px">
           <% end %>
             <div class="card-body">
                 <h5 class="card-title" style="color: black;">
@@ -34,7 +155,8 @@
                     </div>
                 </div>
                 </h5>
-                <%= link_to "Delete",review, method: :delete, class: "text-blue" %>
+                <%= link_to "Delete",review, method: :delete, class: "btn btn-outline-warning"  %>
+                <%= link_to "View",review, class: "btn btn-outline-primary"  %>
             </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :logged_in_user, only: %i[new edit update destroy ]
   before_action :set_review, only: %i[ show edit update destroy ]
+  
 
   def index
     @reviews = Review.order(created_at: :desc).page(params[:page])
@@ -12,7 +13,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.image.attach(params[:image])
+    @review.image.attach(review_params[:image])
     if @review.save
       flash[:success] = "Your review has been added!"
       redirect_to reviews_path
@@ -34,6 +35,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @five = "excellent teamwork is required"
   end
 
   def destroy

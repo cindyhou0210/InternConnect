@@ -2,7 +2,7 @@ class UserConfidsController < ApplicationController
     before_action :logged_in_user, only: [:show]
     def show
         @user = UserConfid.find(params[:id])
-        @reviews = Review.all
+        @reviews = Review.all.with_attached_image
       end
     
       def new

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'user_confids#new'
   post '/signup', to: 'user_confids#create'
   get '/user-page', to: 'userpage#show'
+  post '/user-page', to: 'userpage#show'
+
   resources :user_confids
   resources :quizzes
   resources :conversations, only: [:index, :show, :destroy] do

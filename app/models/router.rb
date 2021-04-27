@@ -1,2 +1,3 @@
 class Router < ApplicationRecord
+   
 end

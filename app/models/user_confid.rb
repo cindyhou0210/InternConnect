@@ -2,6 +2,7 @@ class UserConfid < ApplicationRecord
     include Gravtastic
     gravtastic
     acts_as_messageable
+    has_one_attached :banner
     has_secure_password
     before_save { self.email = email.downcase }
     validates :name, presence: true
