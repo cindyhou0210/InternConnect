@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root 'hello_world#landing'
   get '/landing', to: 'hello_world#landing'
 
-  get '/coffee', to: 'map#show'
+  get '/coffee', to: 'map#index'
   get '/quiz', to: 'quiz#question1'
   post '/quiz', to: 'quiz#create'
   get '/signup', to: 'user_confids#new'
