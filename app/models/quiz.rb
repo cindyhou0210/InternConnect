@@ -31,26 +31,27 @@ def most_similar(user_quiz, all_programs, all_program_reviews)
             similarity = 0
         else
             #They have no deal breakers, calculate similarity score
-            similarity = 0
-            program_collaboration = list_average(aggregate_data[program[:program_id]][:collaboration])
+            #similarity = 0
+            program_collaboration = list_average(aggregate_data[program[:id]][:collaboration])
             similarity += 5 - (user_quiz[:collaboration] - program_collaboration).abs
-            program_independence = list_average(aggregate_data[program[:program_id]][:independence])
+            program_independence = list_average(aggregate_data[program[:id]][:independence])
             similarity += 5 - (user_quiz[:independence] - program_independence).abs
-            program_leadership = list_average(aggregate_data[program[:program_id]][:leadership])
+            program_leadership = list_average(aggregate_data[program[:id]][:leadership])
             similarity += 5 - (user_quiz[:leadership] - program_leadership).abs
-            program_multitasking = list_average(aggregate_data[program[:program_id]][:multitasking])
+            program_multitasking = list_average(aggregate_data[program[:id]][:multitasking])
             similarity += 5 - (user_quiz[:multitasking] - program_multitasking).abs
-            if user_quiz[:pay_preference].between?(list_average(aggregate_data[program[:program_id]][:compensation])-5, list_average(aggregate_data[program[:program_id]][:compensation])+5)
+            if user_quiz[:pay_preference].between?(list_average(aggregate_data[program[:id]][:compensation])-5, list_average(aggregate_data[program[:id]][:compensation])+5)
                 similarity += 5 
             end
-        # store the similarity
-        result[program[:program_id]] = similarity
         end
+        # store the similarity
+        result[program[:id]] = similarity
+        
     end
-    result[2] = 1
-    # result.values.sort
-    # results = result.keys
-    return result
+    #result[2] = 1
+    result.values.sort
+    results = result.keys
+    return results
 end
 
 def list_average(list)

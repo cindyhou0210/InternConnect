@@ -3,10 +3,10 @@
     <% @results_data.each do |result|%>
 
         <% program = Program.find(result) %>
-        <% if program.nil %>   
+        <% if program.nil? %>   
             <h1> no data </h1>
         <% end %>
-        <% if !program.nil %>
+        <% if !program.nil? %>
             <h2> <%= program.name %> </h2>
         <% end %>
     
