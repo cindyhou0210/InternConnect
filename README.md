@@ -30,12 +30,10 @@ Landing urls: /hello-world/landing
 - New company form: /companies/new
 - Create new company from form: /companies/create
 
-<<<<<<< HEAD
+
 ### UserConfids
 Userconfids urls: /userconfids/new, /userconfids/create, /users/delete, /users/show
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ### UserConfids
 Userconfids urls: /userconfids/new, /userconfids/create, /users/delete, /users/show
 
@@ -264,8 +262,4 @@ Contains a user's answers to the personality quiz that will match them to an app
 ## Gems: Cancan, kaminari, rails_admin
 =======
 Display User button, add post button, and log out button on the top right side 
-<<<<<<< HEAD
->>>>>>> update README
-=======
->>>>>>> update README
->>>>>>> frontend-cindy
+
