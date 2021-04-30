@@ -144,12 +144,11 @@ Contains a user's answers to the personality quiz that will match them to an app
 # Gems and API
 ## Ruby version: 2.7.2
 
-## Gems: Cancan, kaminari, rails_admin
-=======
-=======
->>>>>>> update README
+## Gems: Cancan, kaminari, rails_admin, active-storage, Gravatar
+
+## APIs: Mapbox
+
 Identify and describe your key views and models. Use rails generators to generate scaffolding for your key models and views. At this point you should be getting close to something working a little bit. As soon as you start adding code to your controllers, models and views, it will get more difficult to run scaffold generation. But feel free to use a generated scaffold as sample code to remember the standard idioms
->>>>>>> frontend-cindy
 
 ### Quiz 
 Quiz urls: /quiz/question1
