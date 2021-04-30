@@ -38,7 +38,11 @@ Userconfids urls: /userconfids/new, /userconfids/create, /users/delete, /users/s
 Userconfids urls: /userconfids/new, /userconfids/create, /users/delete, /users/show
 
 ### Quiz 
-Quiz urls: /quiz/question1
+Quiz urls: /quizzes/question1, /quizzes/new
+
+### Map
+
+Map urls: map/coffee
 
 
 ### Display user login prompt, and check for correct password and username: /login
