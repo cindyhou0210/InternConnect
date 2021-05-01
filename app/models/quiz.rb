@@ -19,17 +19,17 @@ def most_similar(user_quiz, all_programs, all_program_reviews)
     # Loop through aggregate_data to find the best person based on quiz object. 
     result = {}
     all_programs.each do |program|
-        similarity = 0
-        # All the ways to get 0 similarity
-        if !user_quiz[:unpaid] and !program[:paid]
-            similarity = 0
-        elsif user_quiz[:class_standing] != program[:class_standing]
-            similarity = 0
-        elsif user_quiz[:season] != program[:season]
-            similarity = 0
-        elsif user_quiz[:work_auth] == false && program[:work_auth] == false
-            similarity = 0
-        else
+         similarity = 0
+        # # All the ways to get 0 similarity
+         if !user_quiz[:unpaid] and !program[:paid]
+              similarity = 0
+          elsif user_quiz[:class_standing] < program[:class_standing]
+              similarity = 0
+          elsif user_quiz[:season] != program[:season]
+              similarity = 0
+          elsif user_quiz[:work_auth] == false && program[:work_auth] == false
+              similarity = 0
+          else
             #They have no deal breakers, calculate similarity score
             #similarity = 0
             program_collaboration = list_average(aggregate_data[program[:id]][:collaboration])
@@ -47,10 +47,16 @@ def most_similar(user_quiz, all_programs, all_program_reviews)
         # store the similarity
         result[program[:id]] = similarity
         
+
     end
+
     #result[2] = 1
-    result.values.sort
-    results = result.keys
+    results = Array.new
+    res = result.sort_by { | program, similarity | similarity }
+    res.reverse!
+    res.each do |item|
+        results.push(item[0])
+    end
     return results
 end
 
