@@ -1,6 +1,6 @@
 class QuizzesController < ApplicationController
-  before_action :logged_in_user, only: [:create]
-  before_action :set_quiz, only: %i[:result ]
+  before_action :logged_in_user, only: %i[create]
+  before_action :set_quiz, only: %i[result ]
 
   def new
       @quiz = Quiz.new
