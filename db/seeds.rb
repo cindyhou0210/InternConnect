@@ -20,13 +20,15 @@ require 'faker'
 #     User.new(name: u.name, major: Faker::Educator.degree, class_year: Faker::Number.between(from: 1, to: 4), bio: Faker::TvShows::BigBangTheory.quote, title: Faker::Job.title, affiliation: Faker::University.name, user_confid_id: u.id)
 # end
 
-#  20.times do
-#      Company.create(name: Faker::Company.name, field: Faker::Company.industry, stage: Faker::Company.type, description: Faker::Company.catch_phrase)
-#  end
+  20.times do
+      Company.create(name: Faker::Company.name, field: Faker::Company.industry, stage: Faker::Company.type, description: Faker::Company.catch_phrase)
+  end
+
+season = ["Fall", "Winter", "Summer"]
+boolean = [true, false]
 
 30.times do
-    season = ["Fall", "Winter", "Summer"]
-    p = Program.create(name: Faker::Job.title, field: Faker::Company.industry, paid: Faker::Boolean.boolean, work_auth: Faker::Boolean.boolean, class_standing: Faker::Number.between(from: 1, to: 4), company_id: Company.all.sample.id, season: season.sample)
+    p = Program.create(name: Faker::Job.title, field: Faker::Company.industry, paid: boolean[rand(0..1)], work_auth: boolean[rand(0..1)], class_standing: rand(1..4), company_id: Company.all.sample.id, season: season.sample)
 
     collab = rand(1..5)
     indep = rand(1..5)
@@ -35,8 +37,6 @@ require 'faker'
     comp = rand(20..70)
 
     5.times do
-        Review.create(user_id: User.all.sample.id, program_id: p.id, comment: Faker::Lorem.paragraphs, collaboration: collab, independence: indep, leadership: lead, multitasking: multi, compensation: comp)
+        Review.create(user_id: User.all.sample.id, program_id: p.id, comment: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true), collaboration: collab, independence: indep, leadership: lead, multitasking: multi, compensation: comp)
     end
-
 end
-
