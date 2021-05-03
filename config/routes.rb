@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   root 'hello_world#landing'
   get '/landing', to: 'hello_world#landing'
 
-  get '/coffee', to: 'map#show'
+  get '/coffee', to: 'map#index'
   get '/quiz', to: 'quiz#question1'
   post '/quiz', to: 'quiz#create'
   get '/signup', to: 'user_confids#new'
+  get '/results', to: 'quizzes#result'
   post '/signup', to: 'user_confids#create'
   get '/user-page', to: 'userpage#show'
   post '/user-page', to: 'userpage#show'

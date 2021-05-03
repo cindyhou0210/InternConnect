@@ -1,0 +1,71 @@
+<h1>Program</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @program.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @program.company.name %>
+</p>
+
+<p>
+  <strong>Field:</strong>
+  <%= @program.field %>
+</p>
+
+<p>
+  <strong>Paid position?</strong>
+  <%= @program.paid %>
+</p>
+
+<p>
+  <strong>Work authorization?</strong>
+  <%= @program.work_auth %>
+</p>
+
+<p>
+  <strong>Program season:</strong>
+  <%= @program.season%>
+</p>
+
+ <div class = "center table">
+    <h1>Reviews</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Program</th>
+          <th>Company</th>
+          <th>Comment</th>
+          <th colspan= "3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <% Review.all.each do |review| %>
+              <tr>
+                <% if review.program == @program %>
+                  <% if !review.user.nil? || !review.program.nil? %>
+                    <td><%= review.user.name %></td>
+                    <td><%= review.program.name %></td>
+                    <td><%= review.program.company.name %></td>
+                    <td><%= review.comment %></td>
+
+                    <% if review.user.user_confid == current_user && !current_user.nil? %>
+                      <td><%= link_to 'Show', review %></td>  
+                      <td><%= link_to 'Edit', edit_review_path(review) %></td>
+                      <td><%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% else %>
+                      <td><%= link_to 'Show', review %></td>  
+                    <% end %>
+                    
+                  <% end %>
+                </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+<%= link_to "Back", redirect(reviews_path) %>

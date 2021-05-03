@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_082642) do
+ActiveRecord::Schema.define(version: 2021_05_03_155740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,14 +112,14 @@ ActiveRecord::Schema.define(version: 2021_04_26_082642) do
     t.boolean "paid"
     t.boolean "work_auth"
     t.integer "class_standing"
-    t.integer "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "season"
+    t.integer "company_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_confid_id"
     t.boolean "unpaid"
     t.string "job_preference"
     t.boolean "work_auth"

@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, only: %i[ new create ]
+  before_action :set_company, only: %i[ show ]
   
   def new
     @company = Company.new
@@ -15,10 +16,17 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def show
+  end
+
 
 private
 
   def company_params
     params.require(:company).permit(:name, :field, :stage, :description)
+  end
+
+  def set_company
+    @company = Company.find(params[:id])
   end
 end

@@ -40,7 +40,7 @@
     <p>This program is paid.</p>
     <%= form.label :paid_true, "True" %>
     <%= form.radio_button :paid, true %>
-    <%= form.label :paid, "False" %>
+    <%= form.label :paid_false, "False" %>
     <%= form.radio_button :paid, false %>
   </div>
 
@@ -54,14 +54,14 @@
 
    <div class="pb-3">
     <p>The minimum class standing requirement for this position is </p>
-    <%= form.label :class_stand_2, "Rising Sophomore" %>
-    <%= form.radio_button :class_standing, 2 %>
-    <%= form.label :class_stand_3, "Rising Junior" %>
-    <%= form.radio_button :class_standing, 2 %>
-    <%= form.label :class_stand_4, "Rising Senior" %>
-    <%= form.radio_button :class_standing, 3 %>
-    <%= form.label :class_stand_1, "No restriction" %>
+    <%= form.label :class_stand_1, "Freshman" %>
     <%= form.radio_button :class_standing, 1 %>
+    <%= form.label :class_stand_2, "Sophomore" %>
+    <%= form.radio_button :class_standing, 2 %>
+    <%= form.label :class_stand_3, "Junior" %>
+    <%= form.radio_button :class_standing, 3 %>
+    <%= form.label :class_stand_4, "Senior" %>
+    <%= form.radio_button :class_standing, 4 %>
   </div>
 
   <div class="pb-3">

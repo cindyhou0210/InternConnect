@@ -1,0 +1,15 @@
+<% store_location %>
+<h1> Results </h1>
+
+
+    <% @results_data.each do |result|%>
+
+        <% program = Program.find(result) %>
+        <% if program.nil? %>   
+            <h1> no data </h1>
+        <% end %>
+        <% if !program.nil? %>
+            <h2> <%= link_to program.name, program %> </h2>
+        <% end %>
+    
+    <%end%>

@@ -3,7 +3,7 @@
 
   <% if logged_in? %>
     <div class="pb-3">
-        <%= form.hidden_field :user_id, value: User.where(:user_confid => current_user).first.id %>
+        <%= form.hidden_field :user_confid_id, value: current_user.id %>
     </div>
   <% end %>
 
