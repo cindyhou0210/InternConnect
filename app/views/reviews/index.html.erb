@@ -32,8 +32,8 @@
               <tr>
                 <% if !review.user.nil? || !review.program.nil?%>
                   <td><%= review.user.name %></td>
-                  <td><%= review.program.name %></td>
-                  <td><%= review.program.company.name %></td>
+                  <td><%= link_to review.program.name, review.program %></td>
+                  <td><%= link_to review.program.company.name, review.program.company %></td>
                   <td><%= review.comment %></td>
 
                   <% if review.user.user_confid == current_user && !current_user.nil? %>
