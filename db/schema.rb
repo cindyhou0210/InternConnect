@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_082642) do
+ActiveRecord::Schema.define(version: 2021_05_03_155740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_082642) do
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_confid_id"
     t.boolean "unpaid"
     t.string "job_preference"
     t.boolean "work_auth"
