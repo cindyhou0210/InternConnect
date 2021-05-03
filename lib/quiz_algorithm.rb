@@ -28,6 +28,8 @@ def most_similar(user_quiz, all_programs, all_program_reviews)
             similarity = 0
         elsif user_quiz[:work_auth] == false && program[:work_auth] == false
             similarity = 0
+        elsif user_quiz[:job_preference] != program[:field]
+            similarity = 0
         else
             #They have no deal breakers, calculate similarity score
             similarity = 0
