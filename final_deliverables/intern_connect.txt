@@ -5,5 +5,5 @@ semester: 2021 (Spring)
 github: https://github.com/cindyhou0210/InternConnect
 application: https://dry-shelf-78802.herokuapp.com/
 presentation: https://docs.google.com/presentation/d/1V9pOrILR54lpaIaxK19Uu1CNqgaRM7fpaToMtzt3FnM/edit?usp=sharing
-image: https://imgur.com/8M3cOgj
+image: Group8.png
 team: Eli Boudaie, Cindy Hou, Dawn Mitchell
