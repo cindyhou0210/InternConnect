@@ -1,33 +1,105 @@
-<h1>Program</h1>
-<p>
-  <strong>Name:</strong>
-  <%= @program.name %>
-</p>
 
-<p>
-  <strong>Company:</strong>
-  <%= @program.company.name %>
-</p>
 
-<p>
-  <strong>Field:</strong>
-  <%= @program.field %>
-</p>
+<div class="jumbotron jumbotron-fluid "style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 100%,rgba(255,255,255,0.9) 100%), url(https://placeimg.com/1000/480/tech); border-radius: 25px;">
 
-<p>
-  <strong>Paid position?</strong>
-  <%= @program.paid %>
-</p>
+    <div class="container">
+      <h1 class="display-4 text-center"><%= @program.name %></h1>
+      
+    </div>
+    
+</div>
 
-<p>
-  <strong>Work authorization?</strong>
-  <%= @program.work_auth %>
-</p>
+<div class="container text-center mt-2">
+  <div class="row">
+      <div class="col-sm">
+        <div class="card" style="background-color: #F2D120; color: #F22046;">
+          <div class="card-body">
+              <p>
+                
+              <strong>
+                <h5> <%= link_to @program.company.name, @program.company%></h5>
+                
+              </strong>
+              
+              
+              </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm">
+        <div class="card" style="background-color: #348111; color: #EC895F">
+          <div class="card-body">
+              <p>
+                
+              <strong>
+                <h5> <%= @program.field %> </h5>
+              </strong>
+              
+              
+              </p>
+          </div>
+        </div>
+      </div>
 
-<p>
-  <strong>Program season:</strong>
-  <%= @program.season%>
-</p>
+      <div class="col-sm">
+        <div class="card" style="background-color: #2035F2; color: #F2D120;">
+          <div class="card-body">
+              <p>
+                <% if @program.paid == true %>
+
+                  <strong>
+                    <h5> Paid </h5>
+                  </strong>
+                <% else %>
+                  <strong>
+                    <h5> Unpaid </h5>
+                  </strong>
+                <% end %>
+                
+              
+              </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="card" style="background-color: #EC895F; color: #2035F2">
+          <div class="card-body">
+              <p>
+                <% if @program.work_auth == true %>
+
+                  <strong>
+                    <h6> Work authorization required </h6>
+                  </strong>
+                <% else %>
+                  <strong>
+                    <h6> Accept OPT/CPT </h6>
+                  </strong>
+                <% end %>
+                
+              
+              </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm">
+        <div class="card" style="background-color: #C820F2; color: #F2D120">
+          <div class="card-body">
+              <p>
+                
+                  <strong>
+                    <h4><%= @program.season%> </h4>
+                  </strong>
+                
+              </p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
 
  <div class = "center table">
     <h1>Reviews</h1>
@@ -68,4 +140,6 @@
       </tbody>
     </table>
 
-<%= link_to "Back", redirect(reviews_path) %>
+<div class= "text-center">
+  <%= link_to "Back",redirect(reviews_path), class: "btn btn-outline-dark" %>
+</div>

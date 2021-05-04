@@ -1,19 +1,45 @@
+<link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>
+<style>
+  .marquee{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 25px;
+    font-family:'Archivo Black';
+    background-color: #EC895F;
+  }
+</style>
 <% store_location %>
 
 <% if logged_in? %>
+  
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
-      <p class="lead">Explore our review session and get started with your career now!</p>
-      <p class="lead">
-      <%= link_to "Take new quiz", new_quiz_path, class: "btn btn-outline-dark"%>
-      <% if !current_user.quiz.nil? %>
-        <%= link_to "See last quiz results", results_path(quiz: current_user.quiz), class: "btn btn-outline-dark"%>
-      <% end %>
-    </p>
+      <div class="row">
+        <div class="col-lg-7 center ml-4 mr-3">
+              <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
+              <p class="lead">Explore our review session and get started with your career now!</p>
+              <p class="lead">
+              <%= link_to "Take new quiz", new_quiz_path, class: "btn btn-outline-dark"%>
+              <% if !current_user.quiz.nil? %>
+                <%= link_to "See last quiz results", results_path(quiz: current_user.quiz), class: "btn btn-outline-dark"%>
+              <% end %>
+            </p>
+        </div>
+
+        <div class="col-lg-3">
+       
+        <%= link_to image_tag("humans.png", alt: "InternConnect"), '#' %>
+        </div>
+      </div>
+     
     </div>
     
   </div>
+  <div class="marquee">
+  <marquee behavior="scroll" direction="left" scrollamount="10">Take our quiz now to start exploring internship opportunities!  Take our quiz now to start exploring internship opportunities</marquee>
+  </div>
+
 <% end %>
 
   <div class = "center table">
