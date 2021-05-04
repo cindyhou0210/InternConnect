@@ -3,9 +3,10 @@
 The name pretty much tells it all! Our app connects you with the perfect internships. As college students, looking for the right internships hae been so important but existing platforms seem to be unable to satified this demand. Our app helps by providing genuine reviews of different internships, posted by college students instead of companies or their recruiters.
 
 To better understand our app, click here to [access our website](http://dry-shelf-78802.herokuapp.com/)
+
 Developers:
 
-Cindy Hou - :sparkling_heart:cindyhou0210@brandeis.edu
+Cindy Hou - cindyhou0210@brandeis.edu
 Dawn Mitchell - dmitchell@brandeis.edu
 Eli Boundaie - eliboudaie@brandeis.edu
 
