@@ -48,7 +48,7 @@ Faker is used to seed the database so the website includes more information othe
 
 ### APIs
 
-###Mapbox
+### Mapbox
 Mapbox is used to develop the Grab a Coffee feature. A styled map is displayed on the page for users to interact with
 
 ## Creative Engineering
