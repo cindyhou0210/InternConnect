@@ -1,4 +1,5 @@
-# Welcome to InternConnect - Your all in one internship reviews platform
+# Welcome to InternConnect 
+## -Your all-in-one internship reviews platform
 
 The name pretty much tells it all! Our app connects you with the perfect internships. As college students, looking for the right internships hae been so important but existing platforms seem to be unable to satified this demand. Our app helps by providing genuine reviews of different internships, posted by college students instead of companies or their recruiters.
 
@@ -7,7 +8,9 @@ To better understand our app, click here to [access our website](http://dry-shel
 Developers:
 
 Cindy Hou - cindyhou0210@brandeis.edu
+
 Dawn Mitchell - dmitchell@brandeis.edu
+
 Eli Boundaie - eliboudaie@brandeis.edu
 
 
