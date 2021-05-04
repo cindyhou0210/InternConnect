@@ -141,6 +141,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
           <% if review.image.attached? %>
             
             <img class="card-img-top" src="<%=(url_for(review.image))%>" alt="Card image cap", style="width: auto; height: 300px">
+          <% else %>
+            <image src="app/assets/images/humans.png", style="width: auto; height: 300px">
           <% end %>
             <div class="card-body">
                 <h5 class="card-title" style="color: black;">

@@ -10,7 +10,9 @@
 
 <div class= "text-center">
   <% if @review.image.attached? %>            
-  <image src="<%=(url_for(@review.image))%>", style="width: auto; height: 300px">
+    <image src="<%=(url_for(@review.image))%>", style="width: auto; height: 300px">
+  <% else %>
+    <image src="assets/images/humans.png", style="width: auto; height: 300px">
   <% end %>
 </div>
 

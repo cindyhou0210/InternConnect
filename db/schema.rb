@@ -112,10 +112,10 @@ ActiveRecord::Schema.define(version: 2021_04_26_082642) do
     t.boolean "paid"
     t.boolean "work_auth"
     t.integer "class_standing"
+    t.integer "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "season"
-    t.integer "company_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
