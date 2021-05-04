@@ -70,6 +70,9 @@ We inluded Gravatar for the website so users can edit their avatar by signing up
 ## Development, Testing, and Deployment
 Our priority for testing to make sure that the appropriate databases were updated when we expected them to be, such as when a user signed up for the app.
 
+## Architecture
+<img width="578" alt="arch" src="https://user-images.githubusercontent.com/48698646/117028931-2ccefa80-accc-11eb-891a-1d9b4e3f5987.png">
+
 ## Screenshots
 ### Home page after user login
 <img width="954" alt="home" src="https://user-images.githubusercontent.com/48698646/117022217-0efe9700-acc6-11eb-813a-a4f4f3d3390d.png">
