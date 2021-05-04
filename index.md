@@ -1,5 +1,5 @@
 # Welcome to InternConnect 
-## -Your all-in-one internship reviews platform
+## Your all-in-one internship reviews platform
 
 ![Images](https://github.com/cindyhou0210/InternConnect/blob/gh-pages/Group6.png)
 
@@ -43,7 +43,10 @@ The Schema includes tables that associate users with reviews and programs.
 We have used several interesting gems to help optimize the InternConnect experience. 
 
 ### Kaminari
-Kaminari is used for paginzation so all reviews are displayed in a well organized way. 
+Kaminari is used for pagination so all reviews are displayed in a well organized way. 
+
+### Mailboxer
+Mailboxer is used to create a private messaging system between users, giving them an inbox, a sent box, and a trash can that they can manipulate.
 
 ### Active-storage
 Active-storage is used to allow users to freely upload files from their local directory. 
@@ -54,42 +57,25 @@ Faker is used to seed the database so the website includes more information othe
 ### APIs
 
 ### Mapbox
-Mapbox is used to develop the Grab a Coffee feature. A styled map is displayed on the page for users to interact with
+Mapbox is used to develop the Grab a Coffee feature. A styled map is displayed on the page for users to interact with.
 
 ## Creative Engineering
 
 ### Take a quiz
-Developing the take a quiz feature was quite challenging initially as it requires a perfect algorithm that can efficiently display information that can attract new users. The 'take a quiz' feature is available to unregistered users with limited results access. Before dispalying the results for new users, we prompt them to sign up for an account first. This is to increase our userbase and attract more people to use our app.
+Developing the take a quiz feature was quite challenging initially as it requires a perfect algorithm that can efficiently display information that can attract new users. The 'take a quiz' feature is available to unregistered users with limited results access. Before displaying the results for new users, we prompt them to sign up for an account first. This is to increase our userbase and attract more people to use our app.
 
 ### Gravatar
-We inluded Gravatar for the website so users can edit their avatar by signing up for a Gravatr account
+We inluded Gravatar for the website so users can edit their avatar by signing up for a Gravatar account
 
 ## Development, Testing, and Deployment
+Our priority for testing to make sure that the appropriate databases were updated when we expected them to be, such as when a user signed up for the app.
 
+## Screenshots
+### Home page after user login
+<img width="954" alt="home" src="https://user-images.githubusercontent.com/48698646/117022217-0efe9700-acc6-11eb-813a-a4f4f3d3390d.png">
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cindyhou0210/InternConnect/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Example quiz results page
+<img width="956" alt="results" src="https://user-images.githubusercontent.com/48698646/117022577-5ab14080-acc6-11eb-8d0c-57021d496906.png">
 
 ### Support or Contact
 
