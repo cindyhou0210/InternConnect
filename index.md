@@ -1,7 +1,7 @@
 # Welcome to InternConnect 
 ## -Your all-in-one internship reviews platform
 
-![Image](https://github.com/cindyhou0210/InternConnect/blob/gh-pages/Group6.png)
+![Images](https://github.com/cindyhou0210/InternConnect/blob/gh-pages/Group6.png)
 
 The name pretty much tells it all! Our app connects you with the perfect internships. As college students, looking for the right internships have been so important but existing platforms seem to be unable to satified this demand. Our app helps by providing genuine reviews of different internships, posted by college students instead of companies or their recruiters.
 
