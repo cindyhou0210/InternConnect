@@ -15,7 +15,7 @@
 <h2> Your posts</h2>
 <div class="row">
   <% @reviews.each do |review| %>
-    <% if review.user.name == @user.name %>
+    <% if review.user.user_confid == current_user %>
       <div class="col-4">
         <div class="card shadow p-3 mb-5 bg-white rounded">
           <% if review.image.attached? %>

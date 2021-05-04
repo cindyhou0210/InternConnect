@@ -16,21 +16,22 @@
   </div>
 
   <div class = "pb-3">
-    <%= form.label :job_preference, "Tech" %>
+    <p>What field would you like to work in?</p>
+    <%= form.label :job_preference_tech, "Tech" %>
     <%= form.radio_button :job_preference, "Tech" %>
-    <%= form.label :job_preference, "Accounting" %>
+    <%= form.label :job_preference_acc, "Accounting" %>
     <%= form.radio_button :job_preference, "Accounting" %>
-    <%= form.label :job_preference, "Finance" %>
+    <%= form.label :job_preference_fin, "Finance" %>
     <%= form.radio_button :job_preference, "Finance" %>
-    <%= form.label :job_preference, "Marketing" %>
+    <%= form.label :job_preference_mark, "Marketing" %>
     <%= form.radio_button :job_preference, "Marketing" %>
-    <%= form.label :job_preference, "Real Estate" %>
+    <%= form.label :job_preference_rest, "Real Estate" %>
     <%= form.radio_button :job_preference, "Real Estate" %>
-    <%= form.label :job_preference, "Consulting" %>
+    <%= form.label :job_preference_cons, "Consulting" %>
     <%= form.radio_button :job_preference, "Consulting" %>
-    <%= form.label :job_preference, "Human Resources" %>
+    <%= form.label :job_preference_hr, "Human Resources" %>
     <%= form.radio_button :job_preference, "Human Resources" %>
-    <%= form.label :job_preference, "Law" %>
+    <%= form.label :job_preference_law, "Law" %>
     <%= form.radio_button :job_preference, "Law" %>
   </div>
 
@@ -120,7 +121,7 @@
     <p>What season do you want to work in??</p>
     <%= form.label :season_1, "Summer (May - September)" %>
     <%= form.radio_button :season, "Summer" %>
-    <%= form.label :season, "Fall (October - December)" %>
+    <%= form.label :season_2, "Fall (October - December)" %>
     <%= form.radio_button :season, "Fall" %>
     <%= form.label :season_3, "Spring (January - May)" %>
     <%= form.radio_button :season, "Spring" %>

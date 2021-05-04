@@ -14,21 +14,21 @@ User.all.each do |user|
     end
 end
 
-# 10.times do
-#     u = UserConfid.new(name: Faker::Name.name, email: Faker::Internet.email, password_digest: UserConfid.digest('password'))
-#     u.save
-#     User.new(name: u.name, major: Faker::Educator.degree, class_year: Faker::Number.between(from: 1, to: 4), bio: Faker::TvShows::BigBangTheory.quote, title: Faker::Job.title, affiliation: Faker::University.name, user_confid_id: u.id)
+40.times do
+    u = UserConfid.new(name: Faker::Name.name, email: Faker::Internet.email, password_digest: UserConfid.digest('password'))
+    u.save
+    User.new(name: u.name, major: Faker::Educator.degree, class_year: Faker::Number.between(from: 1, to: 4), bio: Faker::TvShows::BigBangTheory.quote, title: Faker::Job.title, affiliation: Faker::University.name, user_confid_id: u.id)
+ end
+
+# 20.times do
+#     Company.create(name: Faker::Company.name, field: Faker::Company.industry, stage: Faker::Company.type, description: Faker::Company.catch_phrase)
 # end
 
-  20.times do
-      Company.create(name: Faker::Company.name, field: Faker::Company.industry, stage: Faker::Company.type, description: Faker::Company.catch_phrase)
-  end
-
-season = ["Fall", "Winter", "Summer"]
+season = ["Fall", "Spring", "Summer"]
 fields = ["Tech", "Accounting", "Finance", "Marketing", "Real Estate", "Consulting", "Human Resources", "Law"]
 boolean = [true, false]
 
-30.times do
+100.times do
     p = Program.create(name: Faker::Job.title, field: fields.sample, paid: boolean[rand(0..1)], work_auth: boolean[rand(0..1)], class_standing: rand(1..4), company_id: Company.all.sample.id, season: season.sample)
 
     collab = rand(1..5)

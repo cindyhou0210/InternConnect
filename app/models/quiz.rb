@@ -59,12 +59,13 @@ def most_similar(user_quiz, all_programs, all_program_reviews)
 
     end
 
-    #result[2] = 1
     results = Array.new
     res = result.sort_by { | program, similarity | similarity }
     res.reverse!
     res.each do |item|
-        results.push(item[0])
+        if item[1] != 0
+            results.push(item[0])
+        end
     end
     return results
 end
