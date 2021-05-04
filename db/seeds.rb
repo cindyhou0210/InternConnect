@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# User.each do |user|
-#     if user.user_confid_id.nil?
-#         u = UserConfid.create(name: user.name, email: Faker::Internet.email, password_digest: UserConfid.digest('password'))
-#         user.update_attribute(:user_confid_id, u.id)
-#     end
-# end
+User.all.each do |user|
+    if user.user_confid_id.nil?
+        u = UserConfid.create(name: user.name, email: Faker::Internet.email, password_digest: UserConfid.digest('password'))
+        user.update_attribute(:user_confid_id, u.id)
+    end
+end
 
 # 10.times do
 #     u = UserConfid.new(name: Faker::Name.name, email: Faker::Internet.email, password_digest: UserConfid.digest('password'))
@@ -25,10 +25,11 @@ require 'faker'
   end
 
 season = ["Fall", "Winter", "Summer"]
+fields = ["Tech", "Accounting", "Finance", "Marketing", "Real Estate", "Consulting", "Human Resources", "Law"]
 boolean = [true, false]
 
 30.times do
-    p = Program.create(name: Faker::Job.title, field: Faker::Company.industry, paid: boolean[rand(0..1)], work_auth: boolean[rand(0..1)], class_standing: rand(1..4), company_id: Company.all.sample.id, season: season.sample)
+    p = Program.create(name: Faker::Job.title, field: fields.sample, paid: boolean[rand(0..1)], work_auth: boolean[rand(0..1)], class_standing: rand(1..4), company_id: Company.all.sample.id, season: season.sample)
 
     collab = rand(1..5)
     indep = rand(1..5)
@@ -37,6 +38,6 @@ boolean = [true, false]
     comp = rand(20..70)
 
     5.times do
-        Review.create(user_id: User.all.sample.id, program_id: p.id, comment: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true), collaboration: collab, independence: indep, leadership: lead, multitasking: multi, compensation: comp)
+        Review.create(user_id: User.all.sample.id, program_id: p.id, comment: Faker::Quote.matz, collaboration: collab, independence: indep, leadership: lead, multitasking: multi, compensation: comp)
     end
 end
