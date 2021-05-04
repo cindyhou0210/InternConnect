@@ -10,7 +10,7 @@
 </p>
 
 <p>
-  <strong>Field:</strong>
+  <strong>Stage:</strong>
   <%= @company.stage %>
 </p>
 
@@ -20,7 +20,7 @@
 </p>
 
 <div class = "center table">
-    <h1>Company Reviews</h1>
+    <h1>Reviews</h1>
 
     <table>
       <thead>
@@ -57,4 +57,7 @@
         <% end %>
       </tbody>
     </table>
+</div>
+
+<%= link_to "Back", redirect(reviews_path) %>
 

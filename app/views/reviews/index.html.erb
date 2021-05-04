@@ -1,11 +1,15 @@
+<% store_location %>
+
 <% if logged_in? %>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
       <p class="lead">Explore our review session and get started with your career now!</p>
       <p class="lead">
-      <%= link_to "Take quiz", new_quiz_path, class: "btn btn-outline-dark"%>
-
+      <%= link_to "Take new quiz", new_quiz_path, class: "btn btn-outline-dark"%>
+      <% if !current_user.quiz.nil? %>
+        <%= link_to "See last quiz results", results_path(quiz: current_user.quiz), class: "btn btn-outline-dark"%>
+      <% end %>
     </p>
     </div>
     
@@ -13,7 +17,7 @@
 <% end %>
 
   <div class = "center table">
-    <h1>Program Reviews</h1>
+    <h1>All Program Reviews</h1>
 
     <table>
       <thead>

@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, only: %i[ new create ]
   before_action :set_company, only: %i[ show ]
   
   def new

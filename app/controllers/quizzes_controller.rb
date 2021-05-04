@@ -1,5 +1,6 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: %i[ result ]
+  before_action :logged_in_user, only: %i[create]
+  before_action :set_quiz, only: %i[result ]
 
   def new
       @quiz = Quiz.new
@@ -7,11 +8,13 @@ class QuizzesController < ApplicationController
   
   def create
     @quiz = Quiz.new(quiz_params)
+    Quiz.destroy_by(user_confid_id: current_user.id)
     if !logged_in?
         flash[:danger] = "Please sign up to view your quiz results."
         redirect_to signup_path
     elsif @quiz.save
       flash[:success] = "Here are your results."
+      @quiz.update(user_confid_id: current_user.id)
       redirect_to results_path(quiz: @quiz)
     else
       render 'new'
@@ -28,7 +31,7 @@ class QuizzesController < ApplicationController
   private
 
   def quiz_params
-    params.require(:quiz).permit(:user_id, :unpaid, :job_preference, :work_auth, 
+    params.require(:quiz).permit(:user_confid_id, :unpaid, :job_preference, :work_auth, 
                                    :independence, :pay_preference, :leadership,
                                    :multitasking, :collaboration, :class_standing, :season)
   end

@@ -9,4 +9,5 @@ class Review < ApplicationRecord
   validates :independence, presence: true
   validates :multitasking, presence: true
   validates :compensation, presence: true
+  validates :leadership, presence: true
 end

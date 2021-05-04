@@ -30,4 +30,14 @@ module SessionsHelper
       def store_location
         session[:forwarding_url] = request.original_url if request.get?
       end
+
+      def redirect(default)
+        if session[:forwarding_url].nil?
+          return default
+        else
+          r = session[:forwarding_url]
+          session.delete(:forwarding_url)
+          return r
+        end
+      end
 end

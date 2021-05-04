@@ -2,6 +2,13 @@ class Quiz < ApplicationRecord
     # Data is read as hashmap to separate logic from DB
     # To turn object to hashmap, convert obj to hashmap with @object.attributes
     # Return a hash of program ID to similarity
+
+    validates :collaboration, presence: true
+    validates :independence, presence: true
+    validates :leadership, presence: true
+    validates :multitasking, presence: true
+    validates :independence, presence: true
+
 def most_similar(user_quiz, all_programs, all_program_reviews)
     # Loop through all_job_reviews and aggregate data in a hashmap.
     aggregate_data = {}
@@ -28,6 +35,8 @@ def most_similar(user_quiz, all_programs, all_program_reviews)
           elsif user_quiz[:season] != program[:season]
               similarity = 0
           elsif user_quiz[:work_auth] == false && program[:work_auth] == false
+              similarity = 0
+          elsif user_quiz[:job_preference] != program[:field]
               similarity = 0
           else
             #They have no deal breakers, calculate similarity score
