@@ -11,31 +11,105 @@
 </style>
 <% store_location %>
 
+
+
 <% if logged_in? %>
-  
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 center ml-4 mr-3">
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+  <li data-target="#carouselExampleIndicators" style="filter: invert(100%); data-slide-to="0" class="active"></li>
+  <li data-target="#carouselExampleIndicators" style="filter: invert(100%); data-slide-to="1"></li>
+  <li data-target="#carouselExampleIndicators" style="filter: invert(100%); data-slide-to="2"></li>
+</ol>
+
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-7 center ml-4 mr-3">
               <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
               <p class="lead">Explore our review session and get started with your career now!</p>
               <p class="lead">
-              <%= link_to "Take new quiz", new_quiz_path, class: "btn btn-outline-dark"%>
-              <% if !current_user.quiz.nil? %>
-                <%= link_to "See last quiz results", results_path(quiz: current_user.quiz), class: "btn btn-outline-dark"%>
-              <% end %>
-            </p>
-        </div>
+                <%= link_to "Take new quiz", new_quiz_path, class: "btn btn-outline-dark"%>
+                <% if !current_user.quiz.nil? %>
+                  <%= link_to "See last quiz results", results_path(quiz: current_user.quiz), class: "btn btn-outline-dark"%>
+                <% end %>
+              </p>
+            </div>
 
-        <div class="col-lg-3">
-       
-        <%= link_to image_tag("humans.png", alt: "InternConnect"), '#' %>
-        </div>
+            <div class="col-lg-3">
+          
+              <%= link_to image_tag("humans.png", alt: "InternConnect"), '#' %>
+            </div>
+          </div>
+   
       </div>
-     
+  
     </div>
-    
   </div>
+  <div class="carousel-item">
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <div class="row">
+                
+
+                <div class="col-lg-3 ml-4 mr-3">
+              
+                  <%= link_to image_tag("program.png", alt: "InternConnect"), '#' %>
+                </div>
+
+                <div class="col-lg-7 center ">
+                  <h1 class="display-4">The hottest program this summer!</h1>
+                  <p class="lead">Explore our review session and get started with your career now!</p>
+                  <p class="lead">
+                    <%= link_to "Explore programs", new_quiz_path, class: "btn btn-outline-dark"%>
+                    
+                  </p>
+                </div>
+              </div>
+
+          </div>
+
+       </div>
+  </div>
+
+  <div class="carousel-item">
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-7 center ml-4 mr-3">
+                  <h1 class="display-4">Navigate your career with the help of a mentor</h1>
+                  <p class="lead">Look for InternConnect users in your area</p>
+                  <p class="lead">
+                    <%= link_to "Grab a Coffee", coffee_path, class: "btn btn-outline-dark"%>
+                    
+                  </p>
+                </div>
+
+                <div class="col-lg-3">
+              
+                  <%= link_to image_tag("map.png", alt: "InternConnect"), '#' %>
+                </div>
+              </div>
+
+          </div>
+
+       </div>
+  </div>
+  
+</div>
+<a class="carousel-control-prev"  href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon ml" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next "  href="#carouselExampleIndicators" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+
+
   <div class="marquee">
   <marquee behavior="scroll" direction="left" scrollamount="10">Take our quiz now to start exploring internship opportunities!  Take our quiz now to start exploring internship opportunities</marquee>
   </div>
