@@ -30,10 +30,10 @@
             <div class="col-lg-7 center ml-4 mr-3">
               <h1 class="display-4">Hello, <%= current_user.name %>!</h1>
               <p class="lead">Explore our review session and get started with your career now!</p>
-              <p class="lead">
+              <p class="lead float-right">
                 <%= link_to "Take new quiz", new_quiz_path, class: "btn btn-outline-dark"%>
                 <% if !current_user.quiz.nil? %>
-                  <%= link_to "See last quiz results", results_path(quiz: current_user.quiz), class: "btn btn-outline-dark"%>
+                  <%= link_to "See last quiz results", results_path(quiz: current_user.quiz), class: "btn btn-outline-dark mr-5"%>
                 <% end %>
               </p>
             </div>
@@ -81,8 +81,8 @@
                 <div class="col-lg-7 center ml-4 mr-3">
                   <h1 class="display-4">Navigate your career with the help of a mentor</h1>
                   <p class="lead">Look for InternConnect users in your area</p>
-                  <p class="lead">
-                    <%= link_to "Grab a Coffee", coffee_path, class: "btn btn-outline-dark"%>
+                  <p class="lead float-right">
+                    <%= link_to "Grab a Coffee", coffee_path, class: "btn btn-outline-dark mr-5"%>
                     
                   </p>
                 </div>
